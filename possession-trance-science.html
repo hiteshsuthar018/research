@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Devta aana: what science can and cannot say</title>
+<meta name="description" content="A visual, evidence-graded explanation of possession trance, ritual pain and oracle practices — what research shows, what is proposed, and what lies outside science.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F6F2; --well:#FFFFFF; --panel:#EAEEE6; --ink:#161D1A; --ink2:#4A554E;
+  --rule:#D2D9CE; --rule2:#BCC5B7;
+  --indigo:#2B3A66; --moss:#2F6B46; --amber:#8C5F0E; --plum:#6B3C68; --haldi:#B5830F;
+  --moss-bg:#E2EFE6; --amber-bg:#F6EBD7; --plum-bg:#EFE3EF; --indigo-bg:#E3E8F4;
+  --shadow:0 1px 0 var(--rule2);
+  --maxw:70ch;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0E1411; --well:#141B17; --panel:#182019; --ink:#E6EDE6; --ink2:#9FAEA4;
+    --rule:#26302A; --rule2:#334036;
+    --indigo:#93A8E0; --moss:#69BC8B; --amber:#D7A445; --plum:#C892C4; --haldi:#D9AE3E;
+    --moss-bg:#16281E; --amber-bg:#2B2213; --plum-bg:#261A26; --indigo-bg:#1A2033;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0E1411; --well:#141B17; --panel:#182019; --ink:#E6EDE6; --ink2:#9FAEA4;
+  --rule:#26302A; --rule2:#334036;
+  --indigo:#93A8E0; --moss:#69BC8B; --amber:#D7A445; --plum:#C892C4; --haldi:#D9AE3E;
+  --moss-bg:#16281E; --amber-bg:#2B2213; --plum-bg:#261A26; --indigo-bg:#1A2033;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{animation:none!important; transition:none!important}}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size:17px; line-height:1.62; letter-spacing:.005em;
+}
+h1,h2,h3,h4{font-family:Fraunces, Georgia, "Times New Roman", serif; font-weight:600; line-height:1.15; letter-spacing:-.01em; margin:0}
+p,li{max-width:var(--maxw)}
+a{color:inherit; text-underline-offset:3px; text-decoration-thickness:1px}
+code,.mono{font-family:"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace}
+
+/* ---------- shell ---------- */
+.progress{position:fixed; inset:0 auto auto 0; height:3px; width:0%; background:var(--haldi); z-index:60}
+.topbar{position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter:blur(8px); border-bottom:1px solid var(--rule); display:flex; gap:12px; align-items:center;
+  padding:8px 18px}
+.topbar .mark{font-family:Fraunces,serif; font-weight:700; font-size:15px; letter-spacing:-.02em}
+.topbar .spacer{flex:1}
+.btn{font:inherit; font-size:13px; color:var(--ink); background:var(--well); border:1px solid var(--rule2);
+  border-radius:999px; padding:5px 12px; cursor:pointer}
+.btn:hover{border-color:var(--ink2)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible,.step:focus-visible{outline:2px solid var(--haldi); outline-offset:2px}
+
+.layout{display:grid; grid-template-columns:minmax(0,1fr); max-width:1220px; margin:0 auto; padding:0 18px}
+@media(min-width:1080px){
+  .layout{grid-template-columns:230px minmax(0,1fr); gap:44px; padding:0 28px}
+  .toc{display:block}
+}
+.toc{display:none; position:sticky; top:64px; height:calc(100vh - 80px); overflow-y:auto; padding:28px 0 60px; font-size:13.5px}
+.toc ol{list-style:none; margin:0; padding:0; counter-reset:t}
+.toc li{margin:0 0 2px; max-width:none}
+.toc a{display:block; padding:3px 8px 3px 10px; color:var(--ink2); text-decoration:none; border-left:2px solid var(--rule); line-height:1.35}
+.toc a:hover{color:var(--ink)}
+.toc a.on{color:var(--ink); border-left-color:var(--haldi); font-weight:600}
+.toc .kicker{font-size:11.5px; color:var(--ink2); margin:0 0 10px 10px; letter-spacing:.04em}
+
+main{padding:0 0 100px; min-width:0}
+section{padding:48px 0 8px; scroll-margin-top:70px}
+section>h2{font-size:clamp(25px,3.6vw,33px); margin:0 0 6px; max-width:22ch}
+.secno{display:block; font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--haldi); margin-bottom:8px}
+h3{font-size:20px; margin:30px 0 8px}
+h4{font-size:16.5px; margin:22px 0 6px; font-family:"IBM Plex Sans",sans-serif; font-weight:600}
+.lede{font-size:18.5px; color:var(--ink2)}
+hr.rule{border:0; border-top:1px solid var(--rule); margin:44px 0 0}
+
+/* ---------- hero ---------- */
+.hero{padding:56px 0 8px; border-bottom:1px solid var(--rule)}
+.hero h1{font-size:clamp(34px,6.2vw,62px); line-height:1.02; letter-spacing:-.025em; max-width:16ch}
+.hero .sub{font-size:19px; color:var(--ink2); margin:20px 0 0; max-width:60ch}
+.quotebig{font-family:Fraunces,serif; font-size:clamp(20px,3vw,26px); line-height:1.35; margin:26px 0 0; max-width:30ch; color:var(--indigo)}
+
+/* ---------- blocks ---------- */
+.case{background:var(--well); border:1px solid var(--rule); border-left:3px solid var(--haldi); padding:20px 22px; margin:26px 0; border-radius:2px}
+.case p:last-child{margin-bottom:0}
+.note{background:var(--panel); border:1px solid var(--rule); padding:16px 18px; margin:22px 0; border-radius:2px; font-size:16px}
+.note h4{margin-top:0}
+.fig{background:var(--well); border:1px solid var(--rule); border-radius:3px; padding:18px; margin:26px 0}
+.fig figcaption{font-size:13.5px; color:var(--ink2); margin-top:12px; max-width:none; line-height:1.5}
+.fig svg{display:block; width:100%; height:auto}
+.wide{margin-left:calc(-1 * min(4vw, 40px)); margin-right:calc(-1 * min(4vw, 40px))}
+@media(max-width:700px){.wide{margin-left:0;margin-right:0}}
+.scrollx{overflow-x:auto; -webkit-overflow-scrolling:touch}
+
+/* evidence badges */
+.tag{display:inline-flex; align-items:center; gap:6px; font-size:11.5px; font-family:"IBM Plex Mono",monospace;
+  padding:2px 8px; border-radius:999px; border:1px solid; white-space:nowrap; vertical-align:middle}
+.t-ok{color:var(--moss); border-color:var(--moss); background:var(--moss-bg)}
+.t-maybe{color:var(--amber); border-color:var(--amber); background:var(--amber-bg)}
+.t-out{color:var(--plum); border-color:var(--plum); background:var(--plum-bg)}
+.dot{width:7px;height:7px;border-radius:50%;background:currentColor;display:inline-block}
+.key{display:flex; flex-wrap:wrap; gap:10px; margin:22px 0 0}
+.key div{font-size:13px; color:var(--ink2); display:flex; gap:8px; align-items:center; border:1px solid var(--rule); background:var(--well); padding:8px 12px; border-radius:2px; flex:1 1 220px}
+
+/* tables */
+table{border-collapse:collapse; width:100%; font-size:15px; margin:20px 0; min-width:560px}
+th,td{text-align:left; vertical-align:top; padding:10px 12px; border-bottom:1px solid var(--rule)}
+th{font-weight:600; font-size:13px; color:var(--ink2); border-bottom:1px solid var(--rule2); position:sticky; top:0; background:var(--paper)}
+tbody tr:hover{background:var(--panel)}
+td strong{font-weight:600}
+.tbl-wrap{border:1px solid var(--rule); background:var(--well); border-radius:3px; padding:0 4px; margin:24px 0}
+
+/* interactive cascade */
+.cascade{display:flex; flex-direction:column; gap:0; margin:26px 0}
+.step{width:100%; text-align:left; font:inherit; color:inherit; background:var(--well); border:1px solid var(--rule);
+  padding:14px 16px; cursor:pointer; display:flex; gap:14px; align-items:flex-start; border-radius:2px}
+.step:hover{border-color:var(--rule2); background:var(--panel)}
+.step .n{font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--haldi); padding-top:3px; min-width:22px}
+.step .ttl{font-weight:600; font-size:16px}
+.step .hint{font-size:13.5px; color:var(--ink2); margin-top:2px}
+.step .chev{margin-left:auto; color:var(--ink2); font-size:13px; padding-top:3px}
+.step[aria-expanded="true"]{border-color:var(--haldi)}
+.link{width:1px; height:16px; background:var(--rule2); margin:0 0 0 32px}
+.body{display:none; padding:2px 16px 18px 52px; border:1px solid var(--rule); border-top:0; background:var(--well); font-size:15.5px}
+.body.open{display:block}
+.body p{max-width:62ch}
+.body p:first-child{margin-top:12px}
+
+/* brain map */
+.brainwrap{display:grid; gap:18px; grid-template-columns:1fr}
+@media(min-width:860px){.brainwrap{grid-template-columns:1.25fr .95fr; align-items:start}}
+.regionlist{display:flex; flex-direction:column; gap:6px}
+.rbtn{font:inherit; font-size:14.5px; text-align:left; background:var(--well); color:inherit; border:1px solid var(--rule); padding:9px 12px; border-radius:2px; cursor:pointer}
+.rbtn:hover{background:var(--panel)}
+.rbtn.on{border-color:var(--haldi); background:var(--panel)}
+.rbtn b{display:block; font-weight:600}
+.rbtn span{color:var(--ink2); font-size:13px}
+.region{fill:var(--panel); stroke:var(--rule2); stroke-width:1.2; cursor:pointer}
+.region.on{fill:var(--haldi); stroke:var(--haldi)}
+.rlabel{font-family:"IBM Plex Mono",monospace; font-size:10.5px; fill:var(--ink2)}
+.readout{border:1px solid var(--rule); background:var(--panel); padding:14px 16px; margin-top:12px; font-size:15px; border-radius:2px; min-height:96px}
+.readout h4{margin:0 0 4px}
+
+/* misc */
+.cols{display:grid; gap:18px; grid-template-columns:1fr}
+@media(min-width:760px){.cols.two{grid-template-columns:1fr 1fr}}
+.card{background:var(--well); border:1px solid var(--rule); padding:16px 18px; border-radius:2px}
+.card h4{margin-top:0}
+.card p:last-child,.card ul:last-child{margin-bottom:0}
+ul.tight li{margin:4px 0}
+.refs{font-size:14.5px}
+.refs li{margin:0 0 14px; max-width:78ch}
+.refs .meta{color:var(--ink2)}
+.pill{font-family:"IBM Plex Mono",monospace; font-size:11px; border:1px solid var(--rule2); padding:1px 6px; border-radius:3px; color:var(--ink2)}
+.big-answer{border-top:2px solid var(--haldi); padding-top:8px}
+svg text{font-family:"IBM Plex Sans",sans-serif}
+.svg-ttl{font-family:Fraunces,serif; font-size:15px; font-weight:600; fill:var(--ink)}
+.svg-lbl{font-size:12.5px; fill:var(--ink)}
+.svg-sm{font-size:11px; fill:var(--ink2)}
+.svg-box{fill:var(--panel); stroke:var(--rule2); stroke-width:1.2}
+.svg-arrow{stroke:var(--ink2); stroke-width:1.4; fill:none}
+footer{border-top:1px solid var(--rule); padding:30px 0 60px; color:var(--ink2); font-size:14px}
+</style>
+</head>
+<body>
+<div class="progress" id="prog"></div>
+<div class="topbar">
+  <span class="mark">Devta aana, examined</span>
+  <span class="spacer"></span>
+  <button class="btn" id="theme">Switch theme</button>
+</div>
+
+<div class="layout">
+<nav class="toc" aria-label="Contents">
+  <p class="kicker">Contents</p>
+  <ol id="toclist"></ol>
+</nav>
+
+<main>
+
+<header class="hero">
+  <h1>A god arrives on Saturday. What is happening?</h1>
+  <p class="sub">Every week in a village, one man's face, posture and voice change. He strikes his own back with an iron chain and seems not to suffer. People ask him about illness, money, marriage. He answers, and hands them a few grains.</p>
+  <p class="quotebig">This page does not ask “real or fake?” It asks a better question: which parts of this can be measured, and what do the measurements actually show?</p>
+  <div class="key" aria-label="How evidence is marked on this page">
+    <div><span class="tag t-ok"><span class="dot"></span>Supported</span> Repeatedly observed in published studies.</div>
+    <div><span class="tag t-maybe"><span class="dot"></span>Proposed</span> A researcher's hypothesis; evidence thin or mixed.</div>
+    <div><span class="tag t-out"><span class="dot"></span>Outside science</span> Not a question measurement can settle.</div>
+  </div>
+</header>
+
+<section id="s1">
+  <span class="secno">01 / the case</span>
+  <h2>Start with the man, not with a verdict</h2>
+  <div class="case">
+    <p>A village in India. Every Saturday, people gather for the local deity. Drums, a crowd, a familiar sequence of acts. One particular man begins to shake. His expression hardens, his movements change, sometimes his voice drops or rises into a register nobody hears from him on an ordinary day. The community says: <em>devta aa gaye</em> — the deity has come.</p>
+    <p>He takes an iron chain and strikes his own back, hard, repeatedly. He does not flinch the way you would expect. Then people come forward. A mother asks about her son's fever. A man asks whether to sell his land. A family asks why a marriage keeps falling through. He answers, sometimes sharply, sometimes in short riddles. He presses a handful of grain into their palms and tells them what to do with it.</p>
+    <p>An hour later, the state passes. He may say he remembers little. On Monday he is a farmer, a shopkeeper, a neighbour.</p>
+  </div>
+
+  <p>There are two lazy responses to this scene, and both of them stop the enquiry before it begins.</p>
+
+  <div class="cols two">
+    <div class="card">
+      <h4>“He is obviously acting.”</h4>
+      <p>This assumes the answer. Deliberate faking is one real possibility among several, and it does happen — but a person can also enter a state they did not choose, with changes in attention, memory and bodily control that they cannot simply switch on at will. Assuming performance means you never look for the mechanism.</p>
+    </div>
+    <div class="card">
+      <h4>“A deity is clearly inside him.”</h4>
+      <p>This also assumes the answer. It may be what he and his community sincerely believe, and this page will not mock that. But it is a claim about an unmeasured entity, and everything observable in the scene — the trembling, the changed voice, the tolerated blows — has candidate explanations that can be studied directly.</p>
+    </div>
+  </div>
+
+  <p>The scientific move is to split the scene into parts that can be observed, parts that have known mechanisms, and parts that no instrument reaches. That is the structure of this entire page, and it is the structure of the answer at the end.</p>
+
+  <div class="note">
+    <h4>One thing to fix in your head before reading further</h4>
+    <p>The states described here are <strong>not rare, not exotic, and not a sign that something is wrong with a person.</strong> Anthropologists surveying hundreds of societies found culturally patterned altered states of consciousness in the large majority of them — the older landmark survey by Erika Bourguignon reported something like 90% of 488 societies, and although that count used loose criteria by modern standards, later work has not overturned the basic picture. Whatever is happening on that Saturday, the human capacity behind it appears to be close to universal. What changes from place to place is what the state is <em>called</em>, who is allowed to enter it, and what is expected once they do.</p>
+  </div>
+</section>
+
+<hr class="rule">
+<section id="s2">
+  <span class="secno">02 / vocabulary</span>
+  <h2>Twelve words people use for one scene</h2>
+  <p class="lede">Most confusion about possession comes from mixing vocabularies. A word borrowed from psychiatry sounds like a diagnosis; a word borrowed from anthropology sounds like an endorsement. They are describing different slices of the same Saturday.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 330" role="img" aria-label="Nesting diagram: altered states of consciousness contains trance, which contains possession trance; dissociation overlaps all three; dissociative disorders is a small clinical subset that overlaps only partly.">
+      <ellipse cx="300" cy="165" rx="240" ry="140" fill="none" stroke="var(--rule2)" stroke-width="1.4"/>
+      <ellipse cx="270" cy="175" rx="170" ry="105" fill="var(--panel)" stroke="var(--rule2)" stroke-width="1.2" opacity="0.75"/>
+      <ellipse cx="250" cy="190" rx="105" ry="70" fill="var(--indigo-bg)" stroke="var(--indigo)" stroke-width="1.3"/>
+      <ellipse cx="470" cy="180" rx="150" ry="112" fill="none" stroke="var(--plum)" stroke-width="1.4" stroke-dasharray="5 4"/>
+      <ellipse cx="560" cy="205" rx="72" ry="56" fill="var(--plum-bg)" stroke="var(--plum)" stroke-width="1.3"/>
+      <text class="svg-lbl" x="300" y="46" text-anchor="middle">Altered states of consciousness</text>
+      <text class="svg-sm" x="300" y="63" text-anchor="middle">sleep, absorption, meditation, hypnosis, intoxication, trance</text>
+      <text class="svg-lbl" x="205" y="104" text-anchor="middle">Trance</text>
+      <text class="svg-lbl" x="250" y="188" text-anchor="middle" font-weight="600">Possession trance</text>
+      <text class="svg-sm" x="250" y="206" text-anchor="middle">“devta aana”, oracle, mediumship</text>
+      <text class="svg-lbl" x="512" y="86" text-anchor="middle" fill="var(--plum)">Dissociation</text>
+      <text class="svg-sm" x="512" y="103" text-anchor="middle">a process, not a diagnosis</text>
+      <text class="svg-sm" x="560" y="200" text-anchor="middle" fill="var(--plum)">Dissociative</text>
+      <text class="svg-sm" x="560" y="216" text-anchor="middle" fill="var(--plum)">disorders</text>
+      <text class="svg-sm" x="560" y="232" text-anchor="middle" fill="var(--plum)">(distress + impairment)</text>
+    </svg>
+    <figcaption>The clinical circle is small and sits mostly outside the ritual one. A person can be deep inside “possession trance” and nowhere near a disorder. Overlap exists — that is why the dotted boundary crosses — but overlap is not identity.</figcaption>
+  </figure>
+
+  <h3>Who owns which word</h3>
+  <div class="tbl-wrap scrollx">
+  <table>
+    <thead><tr><th>Term</th><th>Field it comes from</th><th>What it actually means</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Spirit possession</strong></td><td>Anthropology / religion</td><td>A cultural explanation: a non-human agent is acting through a person's body. It describes a belief system, not a measurement.</td></tr>
+      <tr><td><strong>Possession trance</strong></td><td>Anthropology</td><td>The observable version: an altered state in which the person's identity is experienced and displayed as replaced by another agent. Neutral about whether the agent exists.</td></tr>
+      <tr><td><strong>Religious / cultural trance</strong></td><td>Anthropology</td><td>Trance that is expected, scheduled, taught and valued by a community. The Saturday ritual is exactly this.</td></tr>
+      <tr><td><strong>Mediumship</strong></td><td>Anthropology / psychology of religion</td><td>A person who routinely relays messages from another agent. Possession is one form; automatic writing and hearing-voices forms also exist.</td></tr>
+      <tr><td><strong>Oracle</strong></td><td>Religious studies / history</td><td>A social <em>role</em>: the recognised person a community consults for divine answers. It says nothing about inner experience.</td></tr>
+      <tr><td><strong>Altered state of consciousness</strong></td><td>Psychology / neuroscience</td><td>Any marked, temporary change in how experience is organised — attention, time sense, body awareness, sense of self.</td></tr>
+      <tr><td><strong>Absorption</strong></td><td>Psychology</td><td>A measurable trait: the tendency to become totally immersed, losing track of surroundings. Tellegen and Atkinson built the standard scale in 1974.</td></tr>
+      <tr><td><strong>Suggestibility</strong></td><td>Psychology</td><td>How strongly a person's experience shifts in response to expectation and instruction. Varies a lot between individuals and is testable.</td></tr>
+      <tr><td><strong>Dissociation</strong></td><td>Psychology</td><td>A partial disconnection between things normally joined: action and ownership, experience and memory, body and self. Everyone does it mildly; intensity varies.</td></tr>
+      <tr><td><strong>Pathological possession</strong></td><td>Psychiatry</td><td>A possession state that is unwanted, uncontrollable, distressing or disabling — <em>and</em> not sanctioned by the person's own culture.</td></tr>
+      <tr><td><strong>Dissociative disorders</strong></td><td>Psychiatry</td><td>Formal diagnoses (DSM-5, ICD-11) requiring clinically significant distress or impairment. ICD-11 codes trance disorder as 6B62 and possession trance disorder as 6B63.</td></tr>
+      <tr><td><strong>Default mode network, salience network</strong></td><td>Neuroscience</td><td>Named patterns of brain regions that tend to activate together. Useful shorthand, not organs, and not “the possession centre”.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="note">
+    <h4>The single most important line in this section</h4>
+    <p>Both major diagnostic systems explicitly <strong>carve out cultural and religious practice</strong>. ICD-11's possession trance disorder requires that the state be <em>involuntary and unwanted</em>, that it cause significant distress or impairment, and that it <em>not be accepted as part of a collective cultural or religious practice</em>. On that definition, a village oracle who enters trance on schedule, functions normally on Monday, and holds a respected role is <strong>not</strong> diagnosable by virtue of the trance itself. A psychiatrist who labelled him ill would be misapplying their own manual.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="s3">
+  <span class="secno">03 / the main pathway</span>
+  <h2>How a Saturday becomes a deity</h2>
+  <p class="lede">This is the backbone of the whole scientific account. Tap any step to open what researchers think is happening there — and how solid that claim is.</p>
+
+  <div class="cascade" id="cascade">
+    <button class="step" aria-expanded="false"><span class="n">01</span><span><span class="ttl">Cultural belief</span><span class="hint">Everyone already knows the deity can come, and what it looks like when he does</span></span><span class="chev">+</span></button>
+    <div class="body">
+      <p>Before anything happens in anyone's brain, a script exists in the community. The deity has a name, a temperament, preferred days, characteristic gestures. Children watch it for years. This is <strong>cultural learning</strong>, and it supplies the content of everything that follows — not the capacity, but the shape.</p>
+      <p>Why it matters mechanically: the brain is not a neutral recorder. It constantly predicts what experience should be like and then fits incoming signals to those predictions. A lifetime of watching possession gives extremely detailed predictions to fit.</p>
+      <p><span class="tag t-ok"><span class="dot"></span>Supported</span> Cross-cultural research consistently finds that the form, content and triggers of possession states track local belief closely.</p>
+    </div>
+    <div class="link"></div>
+
+    <button class="step" aria-expanded="false"><span class="n">02</span><span><span class="ttl">Ritual expectation</span><span class="hint">A fixed time, place and sequence tell the body what is about to happen</span></span><span class="chev">+</span></button>
+    <div class="body">
+      <p>Saturday, the same courtyard, the same order of acts. Repetition turns the setting itself into a signal. In learning terms this is <strong>conditioning</strong>: cues that reliably precede a state start to trigger parts of that state on their own, the way a familiar smell can pull a mood out of you before you have identified it.</p>
+      <p>Expectancy is also the active ingredient in hypnosis research: what people are told will happen strongly shapes what they then experience, including experiences they report as involuntary.</p>
+      <p><span class="tag t-ok"><span class="dot"></span>Supported</span> Expectancy effects on experience are among the most replicated findings in psychology. <span class="tag t-maybe"><span class="dot"></span>Proposed</span> That ritual cues act as classical conditioned triggers for trance specifically is a reasonable model with limited direct field testing.</p>
+    </div>
+    <div class="link"></div>
+
+    <button class="step" aria-expanded="false"><span class="n">03</span><span><span class="ttl">Music, drumming, repetition, movement</span><span class="hint">Rhythm, exertion, heat, sometimes fasting or smoke</span></span><span class="chev">+</span></button>
+    <div class="body">
+      <p>Sustained rhythm is the single most widespread trance-induction technique on earth. In a 2016 fMRI study, experienced shamanic practitioners listening to rhythmic drumming either entered trance or did not, on cue, inside the scanner. During trance, connectivity <em>within the auditory pathway dropped</em> — the brain appeared to be turning down the very drumming that induced the state, which the authors called perceptual decoupling.</p>
+      <p>Alongside this: physical exertion, heat, crowd noise, sometimes hunger. These push the body toward high arousal, which matters for pain and for the felt intensity of the experience.</p>
+      <p><span class="tag t-ok"><span class="dot"></span>Supported</span> Rhythmic driving reliably assists trance induction in practised people. <span class="tag t-maybe"><span class="dot"></span>Proposed</span> Popular claims that drumming “entrains brainwaves to theta and that causes trance” run far ahead of the evidence. Theta and alpha increases have been recorded — including in a Balinese possession ritual — but a correlation in a handful of people is not a causal mechanism.</p>
+    </div>
+    <div class="link"></div>
+
+    <button class="step" aria-expanded="false"><span class="n">04</span><span><span class="ttl">Heightened attention and arousal</span><span class="hint">Heart rate up, attention narrowed onto the ritual</span></span><span class="chev">+</span></button>
+    <div class="body">
+      <p>Two things rise together. <strong>Arousal</strong> is the body's activation: sympathetic nervous system, adrenaline and noradrenaline, faster heart, sharper senses. <strong>Attention</strong> narrows onto a small set of inputs — the drum, the flame, the deity's image — and drops almost everything else.</p>
+      <p>Field studies using portable heart-rate monitors at high-intensity rituals have documented sustained arousal, and in one striking study of Spanish fire-walking, the heart rates of relatives watching the ritual tracked the walkers' heart rates closely — arousal is partly a shared, social event, not just a private one.</p>
+      <p><span class="tag t-ok"><span class="dot"></span>Supported</span> Physiological arousal during intense ritual is measured, repeatedly, in the field.</p>
+    </div>
+    <div class="link"></div>
+
+    <button class="step" aria-expanded="false"><span class="n">05</span><span><span class="ttl">Absorption and altered consciousness</span><span class="hint">The outside world thins out; the inner stream takes over</span></span><span class="chev">+</span></button>
+    <div class="body">
+      <p>Absorption is the point where narrowed attention becomes a changed state. Time distorts. Self-monitoring — the running commentary that checks how you look to others — quiets down. People differ markedly in how easily they get here, and that difference is measurable with standard scales.</p>
+      <p>In the drumming fMRI study, trance showed stronger hubs in the posterior cingulate cortex (a core default-mode region tied to internally directed thought) coupled with the dorsal anterior cingulate and insula (salience-network regions that amplify whatever currently counts as important). The authors' reading: an internal stream of experience was being amplified while external input was damped.</p>
+      <p><span class="tag t-ok"><span class="dot"></span>Supported</span> Absorption is a real, measurable individual difference. <span class="tag t-maybe"><span class="dot"></span>Proposed</span> The specific network account comes from small samples (n = 15 there) in one tradition, using one induction method. Treat it as a promising lead, not a settled map.</p>
+    </div>
+    <div class="link"></div>
+
+    <button class="step" aria-expanded="false"><span class="n">06</span><span><span class="ttl">Change in the sense of self and agency</span><span class="hint">“This hand is moving, but I am not the one moving it”</span></span><span class="chev">+</span></button>
+    <div class="body">
+      <p>This is the hinge of the entire phenomenon, and it gets a full section below. In brief: the feeling that <em>you</em> caused your own action is not a direct perception. It is a construction the brain assembles, and it can come apart while the movement itself stays perfectly coordinated.</p>
+      <p>When it comes apart inside a ritual where everyone expects a deity, the most available interpretation for that odd feeling is sitting right there: the deity has arrived.</p>
+      <p><span class="tag t-ok"><span class="dot"></span>Supported</span> Sense of agency can be experimentally disrupted while action remains intact — in hypnosis, in illusions, in neurological cases. <span class="tag t-maybe"><span class="dot"></span>Proposed</span> That this is the specific mechanism operating in ritual possession is a strong hypothesis, not a demonstrated fact.</p>
+    </div>
+    <div class="link"></div>
+
+    <button class="step" aria-expanded="false"><span class="n">07</span><span><span class="ttl">Altered behaviour</span><span class="hint">Posture, voice, vocabulary, gesture all shift together</span></span><span class="chev">+</span></button>
+    <div class="body">
+      <p>The behaviour is not random. It is recognisably <em>this</em> deity — which tells you it is drawing on learned material. That does not make it fake, any more than speaking grammatical Hindi is fake because you learned the grammar. Deeply practised behaviour can run with very little conscious supervision.</p>
+      <p><span class="tag t-ok"><span class="dot"></span>Supported</span> Possession behaviour reliably follows culturally specific scripts.</p>
+    </div>
+    <div class="link"></div>
+
+    <button class="step" aria-expanded="false"><span class="n">08</span><span><span class="ttl">The community interprets it as possession</span><span class="hint">An ambiguous state is given a definite name</span></span><span class="chev">+</span></button>
+    <div class="body">
+      <p>Nobody in the courtyard says “interesting dissociative episode”. They say the deity has come, and they act accordingly — bowing, quieting, forming a queue. The interpretation is applied instantly and unanimously, which makes it very hard for the person in the state to frame their experience any other way.</p>
+      <p><span class="tag t-ok"><span class="dot"></span>Supported</span> How an ambiguous internal state gets labelled strongly shapes how it is subsequently experienced and remembered.</p>
+    </div>
+    <div class="link"></div>
+
+    <button class="step" aria-expanded="false"><span class="n">09</span><span><span class="ttl">Social feedback</span><span class="hint">Attention, deference, questions, gratitude</span></span><span class="chev">+</span></button>
+    <div class="body">
+      <p>The state now produces consequences: people listen, defer, ask, thank. Some responses are rewarding, some are simply confirming. Over months and years this shapes which behaviours recur and which fade — the same learning processes that shape any expert social role.</p>
+      <p>Careful: this is <em>not</em> the same as saying “he does it for attention”. Reinforcement shapes behaviour without requiring that the person be pursuing the reward, or even aware of it.</p>
+      <p><span class="tag t-ok"><span class="dot"></span>Supported</span> Social reinforcement shapes behaviour. <span class="tag t-maybe"><span class="dot"></span>Proposed</span> How much of a given oracle's repertoire is shaped this way, in any specific case, is unknown without study.</p>
+    </div>
+    <div class="link"></div>
+
+    <button class="step" aria-expanded="false"><span class="n">10</span><span><span class="ttl">The state becomes stable and expected</span><span class="hint">Next Saturday it arrives faster, cleaner, more reliably</span></span><span class="chev">+</span></button>
+    <div class="body">
+      <p>Practised trance gets easier, quicker and more consistent — which is exactly what you would predict of any skill, and exactly what practitioners across traditions report. The loop closes: the more reliably it happens, the stronger the cultural belief, the stronger next week's expectation.</p>
+      <p>This is why “he has been doing it for twenty years” is evidence of <em>practice</em>, not evidence of authenticity or of fraud. Both would predict the same improvement.</p>
+      <p><span class="tag t-ok"><span class="dot"></span>Supported</span> Experienced practitioners enter these states faster and more reliably than novices across multiple traditions.</p>
+    </div>
+  </div>
+
+  <div class="note">
+    <h4>Read the cascade correctly</h4>
+    <p>It is a loop, not a line, and no single arrow is “the cause”. Remove the culture and you get a different state with different content. Remove the drumming and it may still happen, more slowly. Remove the community and the role collapses even if the state does not. Causation here is distributed across a whole system — which is precisely why simple verdicts fail.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="s4">
+  <span class="secno">04 / the brain</span>
+  <h2>What might be going on inside the head</h2>
+  <p class="lede">A warning first, because this is where popular explanations go wrong fastest. Nobody has scanned a village oracle mid-possession. Everything below is transferred from adjacent research — hypnosis, absorption, mediumship, dissociation — and transferred knowledge is weaker than direct knowledge. Treat the regions as characters in a plausible story, not as a diagnosis.</p>
+
+  <div class="brainwrap">
+    <figure class="fig" style="margin-top:0">
+      <svg viewBox="0 0 560 400" id="brainsvg" role="img" aria-label="Schematic side view of the brain with clickable regions: prefrontal cortex, anterior cingulate, insula, amygdala, hippocampus, temporoparietal junction, posterior cingulate and brainstem.">
+        <path d="M70 215 C60 130 140 58 265 52 C390 46 490 100 500 190 C508 258 470 305 395 318 C360 324 340 340 315 352 C280 368 210 360 165 330 C110 295 76 265 70 215 Z" fill="var(--panel)" stroke="var(--rule2)" stroke-width="1.6"/>
+        <path d="M330 300 C360 318 372 340 366 362" stroke="var(--rule2)" stroke-width="1.4" fill="none"/>
+        <ellipse class="region" data-r="pfc" cx="140" cy="175" rx="58" ry="52"/>
+        <ellipse class="region" data-r="acc" cx="238" cy="150" rx="40" ry="28"/>
+        <ellipse class="region" data-r="insula" cx="258" cy="228" rx="34" ry="26"/>
+        <ellipse class="region" data-r="amyg" cx="238" cy="292" rx="26" ry="20"/>
+        <ellipse class="region" data-r="hipp" cx="310" cy="296" rx="34" ry="19"/>
+        <ellipse class="region" data-r="tpj" cx="392" cy="232" rx="42" ry="32"/>
+        <ellipse class="region" data-r="pcc" cx="392" cy="150" rx="40" ry="28"/>
+        <ellipse class="region" data-r="stem" cx="345" cy="350" rx="24" ry="30"/>
+        <text class="rlabel" x="140" y="178" text-anchor="middle">PFC</text>
+        <text class="rlabel" x="238" y="153" text-anchor="middle">ACC</text>
+        <text class="rlabel" x="258" y="231" text-anchor="middle">insula</text>
+        <text class="rlabel" x="238" y="295" text-anchor="middle">amyg.</text>
+        <text class="rlabel" x="310" y="299" text-anchor="middle">hippo.</text>
+        <text class="rlabel" x="392" y="235" text-anchor="middle">TPJ</text>
+        <text class="rlabel" x="392" y="153" text-anchor="middle">PCC</text>
+        <text class="rlabel" x="345" y="353" text-anchor="middle">stem</text>
+        <text class="svg-sm" x="118" y="60">front</text>
+        <text class="svg-sm" x="470" y="60" text-anchor="end">back</text>
+      </svg>
+      <figcaption>Schematic only — proportions and positions are simplified for reading, not anatomical accuracy. Tap a region.</figcaption>
+    </figure>
+
+    <div>
+      <div class="regionlist" id="rlist">
+        <button class="rbtn" data-r="pfc"><b>Prefrontal cortex</b><span>planning, self-monitoring, control</span></button>
+        <button class="rbtn" data-r="acc"><b>Anterior cingulate cortex</b><span>conflict, effort, the unpleasantness of pain</span></button>
+        <button class="rbtn" data-r="insula"><b>Insula</b><span>the body's inner state; what counts as salient</span></button>
+        <button class="rbtn" data-r="amyg"><b>Amygdala</b><span>threat value, emotional intensity</span></button>
+        <button class="rbtn" data-r="hipp"><b>Hippocampus</b><span>binding events into retrievable memory</span></button>
+        <button class="rbtn" data-r="tpj"><b>Temporoparietal junction</b><span>body ownership, self–other boundary</span></button>
+        <button class="rbtn" data-r="pcc"><b>Posterior cingulate</b><span>default-mode hub, inward-directed thought</span></button>
+        <button class="rbtn" data-r="stem"><b>Brainstem and autonomic system</b><span>arousal, heart rate, descending pain control</span></button>
+      </div>
+      <div class="readout" id="readout" aria-live="polite">
+        <h4>Pick a region</h4>
+        <p>Each one has a job in ordinary life and a proposed role here. The evidence tag tells you how far to trust the second part.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3>Three networks, in plain language</h3>
+  <div class="cols two">
+    <div class="card">
+      <h4>Default mode network</h4>
+      <p>Active when you are inward-facing — daydreaming, remembering, narrating yourself to yourself. Includes the posterior cingulate and midline frontal areas. Plausibly relevant because the sense of being a continuous “me” draws on it.</p>
+    </div>
+    <div class="card">
+      <h4>Salience network</h4>
+      <p>Insula and dorsal anterior cingulate. It flags what deserves attention right now and hands control to whichever system should deal with it. In trance research it shows up coupled to inward-facing regions, which is unusual.</p>
+    </div>
+    <div class="card">
+      <h4>Executive control network</h4>
+      <p>Lateral prefrontal and parietal areas doing deliberate, effortful control. The common hypothesis is reduced ordinary self-monitoring during deep trance — plausible, and not directly demonstrated in ritual possession.</p>
+    </div>
+    <div class="card">
+      <h4>Autonomic nervous system</h4>
+      <p>Not a brain network but a body-wide control system: sympathetic (arousal, adrenaline) and parasympathetic (recovery). The most easily measured part of the whole phenomenon, and the part with the best field data.</p>
+    </div>
+  </div>
+
+  <h3>The sense of agency: how you normally know you did something</h3>
+  <p>You do not feel your muscles and deduce authorship. The brain runs something like a prediction check. When you decide to move, a copy of the motor command is used to predict the sensory consequences. If what arrives matches the prediction, the movement gets flagged as <em>mine</em>. The flag is a computation, and like any computation it can produce the wrong answer.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 250" role="img" aria-label="Diagram of the comparator model: intention produces a motor command and a predicted sensation; actual sensation is compared with prediction; match produces the feeling I did this, mismatch produces the feeling something else moved me.">
+      <rect class="svg-box" x="14" y="100" width="118" height="46" rx="3"/>
+      <text class="svg-lbl" x="73" y="128" text-anchor="middle">Intention</text>
+      <path class="svg-arrow" d="M132 123 H186" marker-end="url(#ah)"/>
+      <rect class="svg-box" x="186" y="52" width="130" height="46" rx="3"/>
+      <text class="svg-lbl" x="251" y="80" text-anchor="middle">Motor command</text>
+      <rect class="svg-box" x="186" y="150" width="130" height="46" rx="3"/>
+      <text class="svg-lbl" x="251" y="172" text-anchor="middle">Predicted</text>
+      <text class="svg-lbl" x="251" y="188" text-anchor="middle">sensation</text>
+      <path class="svg-arrow" d="M160 112 L186 82" marker-end="url(#ah)"/>
+      <path class="svg-arrow" d="M160 134 L186 166" marker-end="url(#ah)"/>
+      <path class="svg-arrow" d="M316 75 C360 75 360 105 396 112" marker-end="url(#ah)"/>
+      <path class="svg-arrow" d="M316 173 C360 173 360 140 396 134" marker-end="url(#ah)"/>
+      <circle cx="424" cy="123" r="28" fill="var(--indigo-bg)" stroke="var(--indigo)" stroke-width="1.3"/>
+      <text class="svg-sm" x="424" y="120" text-anchor="middle" fill="var(--indigo)">compare</text>
+      <text class="svg-sm" x="424" y="134" text-anchor="middle" fill="var(--indigo)">?</text>
+      <path class="svg-arrow" d="M452 112 C500 100 500 70 540 62" marker-end="url(#ah)"/>
+      <path class="svg-arrow" d="M452 134 C500 146 500 176 540 184" marker-end="url(#ah)"/>
+      <rect x="540" y="38" width="146" height="50" rx="3" fill="var(--moss-bg)" stroke="var(--moss)" stroke-width="1.2"/>
+      <text class="svg-lbl" x="613" y="60" text-anchor="middle" fill="var(--moss)">Match</text>
+      <text class="svg-sm" x="613" y="76" text-anchor="middle" fill="var(--moss)">“I am doing this”</text>
+      <rect x="540" y="160" width="146" height="50" rx="3" fill="var(--plum-bg)" stroke="var(--plum)" stroke-width="1.2"/>
+      <text class="svg-lbl" x="613" y="182" text-anchor="middle" fill="var(--plum)">Mismatch</text>
+      <text class="svg-sm" x="613" y="198" text-anchor="middle" fill="var(--plum)">“something moved me”</text>
+      <defs><marker id="ah" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="var(--ink2)"/></marker></defs>
+    </svg>
+    <figcaption>The comparator account of agency, simplified. The key point: the movement and the ownership of the movement are handled separately, so one can fail while the other works perfectly.</figcaption>
+  </figure>
+
+  <p>You already know this from ordinary life. A limb that jerks in half-sleep feels like it happened <em>to</em> you. Automatic writing, ouija boards and ideomotor effects are the classic laboratory demonstrations: people make real movements while sincerely reporting they are not making them. Hypnosis research produces the same dissociation on demand — suggest that an arm is being lifted by something else, and people both lift it and report not lifting it, with brain-imaging differences from the same movement performed voluntarily.</p>
+  <p><span class="tag t-ok"><span class="dot"></span>Supported</span> Agency can be decoupled from action in healthy people. <span class="tag t-maybe"><span class="dot"></span>Proposed</span> That ritual possession is this decoupling, given a cultural name.</p>
+
+  <h3>The sense of self: how “I” can go quiet</h3>
+  <p>Selfhood is not one thing. It is at least: a body that feels like yours, a viewpoint located in that body, a continuous story that connects yesterday to today, and a monitor that tracks how you are being seen. Each of these can be manipulated separately in the lab. The rubber-hand illusion shifts body ownership in ninety seconds with two paintbrushes. Vestibular and temporoparietal stimulation can shift the felt location of the viewpoint. Absorption quiets the social monitor.</p>
+  <p>So the experience “this is not me, someone else is here” does not require an outside entity to be present. It requires the self-construction system to be running differently — plus a culture that supplies a ready-made name for the person who has arrived.</p>
+
+  <h3>Attention: the quiet powerhouse</h3>
+  <p>Attention decides what gets processed richly and what gets processed barely at all. Narrow it hard enough and things happening in plain sight are missed — the inattentional-blindness experiments are a party trick precisely because the effect is so large. Now apply that inside a ritual: sensations that do not fit the deity's script get less processing, the ones that do fit get amplified, and the whole experience becomes more coherent and more convincing from the inside than it would otherwise be.</p>
+  <p>This is also the entry point for pain modulation, because pain is one of the things attention can turn up and down.</p>
+
+  <h3>Predictive processing: the brain as a guesser</h3>
+  <p>The modern working framework in neuroscience says the brain is not passively receiving the world. It is constantly generating predictions about what signals should arrive, and mostly processing the <em>difference</em> between prediction and arrival. Perception is the brain's best current guess, corrected as needed.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 180" role="img" aria-label="Diagram showing prior expectation plus ambiguous bodily signal producing an experience, with a note that stronger priors dominate weaker signals.">
+      <rect class="svg-box" x="14" y="24" width="180" height="52" rx="3"/>
+      <text class="svg-lbl" x="104" y="46" text-anchor="middle">Prior expectation</text>
+      <text class="svg-sm" x="104" y="63" text-anchor="middle">“the deity comes on Saturday”</text>
+      <rect class="svg-box" x="14" y="106" width="180" height="52" rx="3"/>
+      <text class="svg-lbl" x="104" y="128" text-anchor="middle">Ambiguous signal</text>
+      <text class="svg-sm" x="104" y="145" text-anchor="middle">shaking, heat, lightness, noise</text>
+      <path class="svg-arrow" d="M194 50 C250 50 250 82 296 90" marker-end="url(#ah2)"/>
+      <path class="svg-arrow" d="M194 132 C250 132 250 100 296 92" marker-end="url(#ah2)"/>
+      <rect x="296" y="62" width="150" height="60" rx="3" fill="var(--indigo-bg)" stroke="var(--indigo)" stroke-width="1.3"/>
+      <text class="svg-lbl" x="371" y="88" text-anchor="middle" fill="var(--indigo)">Best guess</text>
+      <text class="svg-sm" x="371" y="105" text-anchor="middle" fill="var(--indigo)">weighted by confidence</text>
+      <path class="svg-arrow" d="M446 92 H504" marker-end="url(#ah2)"/>
+      <rect x="504" y="56" width="182" height="72" rx="3" fill="var(--moss-bg)" stroke="var(--moss)" stroke-width="1.2"/>
+      <text class="svg-lbl" x="595" y="82" text-anchor="middle" fill="var(--moss)">Experience</text>
+      <text class="svg-sm" x="595" y="99" text-anchor="middle" fill="var(--moss)">felt as direct perception,</text>
+      <text class="svg-sm" x="595" y="114" text-anchor="middle" fill="var(--moss)">not as an inference</text>
+      <defs><marker id="ah2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="var(--ink2)"/></marker></defs>
+    </svg>
+    <figcaption>When the incoming signal is noisy and the prior is very strong, the guess is dominated by the prior — and it still arrives in consciousness feeling like plain fact.</figcaption>
+  </figure>
+
+  <p>Bodily signals are exactly the noisy kind. Your brain has no precise readout of what your organs are doing; it estimates. Inside a ritual, a chest tightening or a wave of heat is an ambiguous signal meeting an extremely confident prior. The output can be a vivid, unmistakable experience of arrival — with no deception involved anywhere, and no entity required.</p>
+  <p><span class="tag t-ok"><span class="dot"></span>Supported</span> Prior expectations demonstrably shape perception, including bodily perception. <span class="tag t-maybe"><span class="dot"></span>Proposed</span> The full predictive-processing account of possession is a theoretical framework, not a tested result.</p>
+</section>
+
+<hr class="rule">
+
+<section id="s5">
+  <span class="secno">05 / chemistry</span>
+  <h2>Dopamine and friends, without the hype</h2>
+  <p class="lede">Neurotransmitter explanations are the most abused part of this topic. Each of these molecules does many jobs in many circuits; none of them is a switch labelled “trance”. Here is what each one actually does, and how far the ritual connection can honestly be pushed.</p>
+
+  <div class="tbl-wrap scrollx">
+  <table>
+    <thead><tr><th style="min-width:140px">System</th><th>What it does in the body</th><th>Possible relevance here</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Dopamine</strong></td>
+        <td>Signals that something is better or worse than expected; drives motivation and learning about what to pursue. Also central to initiating movement.</td>
+        <td>Could support learning of the ritual role over years, and the pull toward repeating it. Speculation about dopamine and “spiritual experience” is common and poorly grounded.</td>
+        <td><span class="tag t-maybe"><span class="dot"></span>Proposed</span></td>
+      </tr>
+      <tr>
+        <td><strong>Noradrenaline</strong></td>
+        <td>Sets arousal and alertness; sharpens attention to whatever currently matters and narrows focus under stress.</td>
+        <td>Fits the observed narrowing of attention and the heightened, keyed-up quality of ritual states. Rises reliably with exertion and stress.</td>
+        <td><span class="tag t-ok"><span class="dot"></span>Supported</span> for arousal; <span class="tag t-maybe"><span class="dot"></span>Proposed</span> for trance specifically</td>
+      </tr>
+      <tr>
+        <td><strong>Adrenaline</strong></td>
+        <td>Released from the adrenal glands; raises heart rate, blood pressure, blood sugar; prepares the body for effort.</td>
+        <td>Almost certainly elevated during a loud, physically demanding ritual. Measurable via heart rate in the field, which is how researchers usually approach it.</td>
+        <td><span class="tag t-ok"><span class="dot"></span>Supported</span></td>
+      </tr>
+      <tr>
+        <td><strong>Endogenous opioids (β-endorphin, enkephalins)</strong></td>
+        <td>The body's own pain-damping and reward chemistry, released under stress, exertion and injury.</td>
+        <td>The strongest candidate for reduced pain during the chain-striking. Evidence comes from adjacent studies, not from oracles: in a double-blind study, naltrexone (which blocks opioid receptors) abolished the rise in pain threshold that follows synchronised group dancing.</td>
+        <td><span class="tag t-ok"><span class="dot"></span>Supported</span> in exertion and dance; <span class="tag t-maybe"><span class="dot"></span>Proposed</span> in ritual possession</td>
+      </tr>
+      <tr>
+        <td><strong>Cortisol</strong></td>
+        <td>The slower stress hormone; mobilises energy, modulates immune function, follows a daily rhythm.</td>
+        <td>Field studies use saliva cortisol as a stress marker around intense rituals. Results vary by ritual, role and timing — participation is not uniformly “stressful” in the hormonal sense.</td>
+        <td><span class="tag t-maybe"><span class="dot"></span>Proposed</span> mixed findings</td>
+      </tr>
+      <tr>
+        <td><strong>Endocannabinoids</strong></td>
+        <td>Involved in pain, mood and the pleasant after-effects of sustained exercise.</td>
+        <td>Sometimes proposed alongside endorphins for the euphoric aftermath of ordeal rituals. Almost no direct ritual data exists.</td>
+        <td><span class="tag t-maybe"><span class="dot"></span>Proposed</span> weak</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="note">
+    <h4>What the Balinese research actually showed</h4>
+    <p><strong>The claim:</strong> physiological changes can be measured during real possession trance, in the field, not in a laboratory imitation.</p>
+    <p><strong>The study:</strong> a Japanese–Indonesian team built a portable multi-channel EEG telemetry system able to record from people moving vigorously, and used it on three healthy Balinese men performing a ritual dedicatory drama.</p>
+    <p><strong>The result:</strong> one of the three entered possession during the drama. His EEG showed increased power in the theta and alpha bands during trance. The other two, who did not enter trance, showed no such change. Importantly, the possessed man's EEG showed <em>no pathological findings</em> — no epileptic discharges.</p>
+    <p><strong>What it does show:</strong> that possession trance is a distinguishable physiological state, not merely a social performance with no bodily correlate, and that it does not look like a seizure.</p>
+    <p><strong>What it does not show:</strong> anything about cause. One trance subject is a sample of one. Theta and alpha increases also occur in drowsiness, meditation and relaxed attention, so the pattern is not a fingerprint of possession. And the study says nothing whatsoever about whether a deity was present — an EEG cannot address that question even in principle.</p>
+    <p><strong>Also worth knowing:</strong> claims circulating online that Balinese trance research “proved endorphin and dopamine surges cause possession” overstate the literature badly. Hormonal work on ritual states exists, but it is sparse, mostly correlational, and largely conducted on exertion and dance rather than on possession itself.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="s6">
+  <span class="secno">06 / the chain</span>
+  <h2>Why the blows do not seem to hurt him</h2>
+  <p class="lede">This is the part that convinces onlookers more than anything else. It is also the part where science has the most to say, because pain has been studied intensively for sixty years — and the central finding is that the injury and the hurting are two different things.</p>
+
+  <h3>Nociception is not pain</h3>
+  <div class="cols two">
+    <div class="card">
+      <h4>Nociception</h4>
+      <p>The detection and transmission of tissue-damaging events. Specialised nerve endings fire, signals travel the spinal cord upward. This is measurable machinery and it happens whether or not anyone is conscious — it occurs under general anaesthesia.</p>
+    </div>
+    <div class="card">
+      <h4>Pain</h4>
+      <p>The conscious experience. It is produced by the brain, using nociceptive input as one ingredient among several — alongside attention, expectation, emotional state, meaning and context. This is why the same injury hurts differently on different days.</p>
+    </div>
+  </div>
+  <p>The gap between them is not a loophole or a trick. It is the standard modern understanding, built from the gate-control theory onward and confirmed by decades of imaging and clinical work. Soldiers with severe battlefield wounds have long been observed to request less pain relief than civilians with comparable surgical wounds — the injury was similar, the meaning was not.</p>
+
+  <figure class="fig wide">
+    <div class="scrollx">
+    <svg viewBox="0 0 760 300" style="min-width:600px" role="img" aria-label="Pain pathway diagram: stimulus, nociceptors, spinal cord, brain processing, with modulators feeding in, producing pain perception; a separate arrow shows tissue damage continuing regardless.">
+      <rect class="svg-box" x="10" y="120" width="104" height="52" rx="3"/>
+      <text class="svg-lbl" x="62" y="142" text-anchor="middle">Chain strikes</text>
+      <text class="svg-sm" x="62" y="158" text-anchor="middle">the back</text>
+      <path class="svg-arrow" d="M114 146 H150" marker-end="url(#ah3)"/>
+      <rect class="svg-box" x="150" y="120" width="112" height="52" rx="3"/>
+      <text class="svg-lbl" x="206" y="142" text-anchor="middle">Nociceptors</text>
+      <text class="svg-sm" x="206" y="158" text-anchor="middle">detect tissue threat</text>
+      <path class="svg-arrow" d="M262 146 H298" marker-end="url(#ah3)"/>
+      <rect class="svg-box" x="298" y="120" width="106" height="52" rx="3"/>
+      <text class="svg-lbl" x="351" y="142" text-anchor="middle">Spinal cord</text>
+      <text class="svg-sm" x="351" y="158" text-anchor="middle">gating, relay</text>
+      <path class="svg-arrow" d="M404 146 H440" marker-end="url(#ah3)"/>
+      <rect x="440" y="110" width="128" height="72" rx="3" fill="var(--indigo-bg)" stroke="var(--indigo)" stroke-width="1.3"/>
+      <text class="svg-lbl" x="504" y="136" text-anchor="middle" fill="var(--indigo)">Brain</text>
+      <text class="svg-sm" x="504" y="152" text-anchor="middle" fill="var(--indigo)">constructs the</text>
+      <text class="svg-sm" x="504" y="166" text-anchor="middle" fill="var(--indigo)">experience</text>
+      <path class="svg-arrow" d="M568 146 H606" marker-end="url(#ah3)"/>
+      <rect x="606" y="110" width="144" height="72" rx="3" fill="var(--moss-bg)" stroke="var(--moss)" stroke-width="1.2"/>
+      <text class="svg-lbl" x="678" y="140" text-anchor="middle" fill="var(--moss)">Pain perception</text>
+      <text class="svg-sm" x="678" y="158" text-anchor="middle" fill="var(--moss)">how much it hurts</text>
+      <rect x="380" y="14" width="248" height="62" rx="3" fill="var(--amber-bg)" stroke="var(--amber)" stroke-width="1.2"/>
+      <text class="svg-lbl" x="504" y="36" text-anchor="middle" fill="var(--amber)">Modulators feeding in</text>
+      <text class="svg-sm" x="504" y="53" text-anchor="middle" fill="var(--amber)">attention · expectation · meaning · fear</text>
+      <text class="svg-sm" x="504" y="68" text-anchor="middle" fill="var(--amber)">arousal · crowd · endogenous opioids</text>
+      <path class="svg-arrow" d="M504 76 V108" marker-end="url(#ah3)" stroke="var(--amber)"/>
+      <path class="svg-arrow" d="M450 82 C400 96 380 110 360 118" marker-end="url(#ah3)" stroke="var(--amber)" stroke-dasharray="4 3"/>
+      <rect x="150" y="226" width="418" height="52" rx="3" fill="var(--plum-bg)" stroke="var(--plum)" stroke-width="1.2"/>
+      <text class="svg-lbl" x="359" y="248" text-anchor="middle" fill="var(--plum)">Tissue damage proceeds on its own track</text>
+      <text class="svg-sm" x="359" y="265" text-anchor="middle" fill="var(--plum)">bruising, bleeding, infection risk — unaffected by how much it hurts</text>
+      <path class="svg-arrow" d="M206 172 V224" marker-end="url(#ah3)" stroke="var(--plum)"/>
+      <defs><marker id="ah3" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="var(--ink2)"/></marker></defs>
+    </svg>
+    </div>
+    <figcaption>The top row is the experience. The bottom bar is the body. Descending control from the brain can turn the spinal signal down before it ever reaches awareness — but nothing in that loop repairs the skin.</figcaption>
+  </figure>
+
+  <h3>The seven dials that change how much it hurts</h3>
+  <div class="cols two">
+    <div class="card">
+      <h4>Attention</h4>
+      <p>Pain demands attention, but attention directed elsewhere reliably reduces reported pain and the brain response to it. In deep ritual absorption, attention is committed almost entirely elsewhere.</p>
+    </div>
+    <div class="card">
+      <h4>Expectation</h4>
+      <p>Placebo analgesia is a genuine, measurable phenomenon: expecting relief produces relief, and part of that effect is opioid-mediated — blocking opioid receptors with naloxone reduces it. If everyone including the oracle expects that the deity feels no pain, the expectation itself is doing pharmacological work.</p>
+    </div>
+    <div class="card">
+      <h4>Meaning</h4>
+      <p>The same stimulus interpreted as harm hurts more than one interpreted as devotion, achievement or sacrifice. Meaning is not a metaphor here; it changes reported intensity and unpleasantness.</p>
+    </div>
+    <div class="card">
+      <h4>Emotional arousal</h4>
+      <p>High arousal can produce stress-induced analgesia. It can also amplify pain when the emotion is fear of harm. Direction depends on what the arousal means to the person.</p>
+    </div>
+    <div class="card">
+      <h4>The social environment</h4>
+      <p>An audience, shared belief and a valued role all shift pain reports. Field research on ordeal rituals repeatedly finds much lower distress than an outside observer would predict.</p>
+    </div>
+    <div class="card">
+      <h4>Dissociation and endogenous opioids</h4>
+      <p>Dissociative states are associated with reduced pain reporting, and the body's own opioid system damps nociceptive signalling under exertion and stress. These are the two most likely direct contributors on the day.</p>
+    </div>
+  </div>
+
+  <div class="note">
+    <h4>The line that must not be blurred</h4>
+    <p><strong>Reduced pain does not mean reduced injury.</strong> Skin still splits, muscle still bruises, iron still carries tetanus risk, wounds still get infected. Everything described above changes the experience, not the tissue. A person who feels nothing during the ritual can still need a tetanus booster, wound cleaning and stitches afterwards — and the temporary anaesthesia of trance can delay seeking that care. This is the one place where the science has a practical, non-negotiable implication.</p>
+  </div>
+
+  <h3>What the ordeal-ritual research has found</h3>
+  <p>The most systematic body of work here comes from studies of Thaipusam in Mauritius, where devotees pierce their bodies with skewers and hooks and carry heavy frames for hours. One widely cited study of 86 men compared a low-intensity ritual (singing and collective prayer) with the high-intensity kavadi: both performers and mere observers of the painful ritual donated more to a charity afterwards, and higher reported pain predicted larger donations and a broader sense of shared identity. A later study using wearable monitors on 39 men before, during and after the festival found no lasting harm to sleep, activity or stress markers among those who pierced themselves, and self-reported health and quality of life were, if anything, better.</p>
+  <p><span class="tag t-ok"><span class="dot"></span>Supported</span> People in ordeal rituals tolerate stimuli that outsiders expect to be unbearable, and report modest pain. <span class="tag t-maybe"><span class="dot"></span>Proposed</span> The specific mix of mechanisms — how much is endorphins, how much attention, how much expectation — has not been separated out in any field study. <span class="tag t-maybe"><span class="dot"></span>Note</span> These studies are of piercing rituals in Mauritius; transferring their conclusions to chain-striking in a Rajasthani village is an assumption, not a finding.</p>
+</section>
+
+<hr class="rule">
+
+<section id="s7">
+  <span class="secno">07 / the faking question</span>
+  <h2>Why he does not look like he is acting</h2>
+  <p class="lede">“Is he faking?” treats this as a binary. The honest picture is a spectrum, and a single episode can sit at several points on it at once — or move along it as the hour passes.</p>
+
+  <figure class="fig wide">
+    <div class="scrollx">
+    <svg viewBox="0 0 740 200" style="min-width:620px" role="img" aria-label="A horizontal spectrum from conscious performance through learned cultural behaviour, expectation-driven behaviour, deep absorption, altered state of consciousness, to dissociative experience, with a note that these overlap.">
+      <line x1="40" y1="96" x2="700" y2="96" stroke="var(--rule2)" stroke-width="2"/>
+      <g>
+        <circle cx="60" cy="96" r="7" fill="var(--plum)"/>
+        <text class="svg-lbl" x="60" y="70" text-anchor="middle">Conscious</text>
+        <text class="svg-lbl" x="60" y="54" text-anchor="middle">performance</text>
+        <text class="svg-sm" x="60" y="126" text-anchor="middle">knows and</text>
+        <text class="svg-sm" x="60" y="140" text-anchor="middle">intends it</text>
+      </g>
+      <g>
+        <circle cx="188" cy="96" r="7" fill="var(--amber)"/>
+        <text class="svg-lbl" x="188" y="70" text-anchor="middle">Learned</text>
+        <text class="svg-lbl" x="188" y="54" text-anchor="middle">cultural behaviour</text>
+        <text class="svg-sm" x="188" y="126" text-anchor="middle">practised script,</text>
+        <text class="svg-sm" x="188" y="140" text-anchor="middle">little deliberation</text>
+      </g>
+      <g>
+        <circle cx="330" cy="96" r="7" fill="var(--amber)"/>
+        <text class="svg-lbl" x="330" y="70" text-anchor="middle">Expectation-driven</text>
+        <text class="svg-lbl" x="330" y="54" text-anchor="middle">behaviour</text>
+        <text class="svg-sm" x="330" y="126" text-anchor="middle">happens because</text>
+        <text class="svg-sm" x="330" y="140" text-anchor="middle">it is expected to</text>
+      </g>
+      <g>
+        <circle cx="470" cy="96" r="7" fill="var(--indigo)"/>
+        <text class="svg-lbl" x="470" y="70" text-anchor="middle">Deep absorption</text>
+        <text class="svg-sm" x="470" y="126" text-anchor="middle">outside world</text>
+        <text class="svg-sm" x="470" y="140" text-anchor="middle">recedes</text>
+      </g>
+      <g>
+        <circle cx="592" cy="96" r="7" fill="var(--indigo)"/>
+        <text class="svg-lbl" x="592" y="70" text-anchor="middle">Altered state</text>
+        <text class="svg-sm" x="592" y="126" text-anchor="middle">time, body, self</text>
+        <text class="svg-sm" x="592" y="140" text-anchor="middle">all shift</text>
+      </g>
+      <g>
+        <circle cx="694" cy="96" r="7" fill="var(--moss)"/>
+        <text class="svg-lbl" x="694" y="70" text-anchor="middle">Dissociative</text>
+        <text class="svg-lbl" x="694" y="54" text-anchor="middle">experience</text>
+        <text class="svg-sm" x="694" y="126" text-anchor="middle">agency and memory</text>
+        <text class="svg-sm" x="694" y="140" text-anchor="middle">disconnect</text>
+      </g>
+      <text class="svg-sm" x="40" y="180">↤ more voluntary control</text>
+      <text class="svg-sm" x="700" y="180" text-anchor="end">less voluntary control ↦</text>
+    </svg>
+    </div>
+    <figcaption>Not six types of person. Six degrees of one dimension, which a single individual can traverse within one ritual, and across a lifetime of practice.</figcaption>
+  </figure>
+
+  <h3>Why “he is definitely faking” is not a scientific conclusion</h3>
+  <ul class="tight">
+    <li>You cannot read voluntariness off behaviour. A movement generated with full deliberation and one generated automatically can look identical to an observer — and identical to the person too, if their agency signal has shifted.</li>
+    <li>Fluent, well-formed behaviour is not evidence of deliberation. Deep practice makes complex behaviour automatic; that is what practice is for.</li>
+    <li>Suggestible, highly absorbed individuals demonstrably produce sincere involuntary reports under hypnosis, verified against brain-imaging differences from voluntary imitation.</li>
+    <li>Preparation is not proof of fraud. A practitioner who fasts, bathes and prepares is doing what any skilled performer of a demanding state does.</li>
+  </ul>
+
+  <h3>Why “a supernatural being definitely entered him” is not one either</h3>
+  <ul class="tight">
+    <li>No measurement in the scene distinguishes “deity present” from “brain and body in an altered state, interpreted through local belief”. Both predict everything observed.</li>
+    <li>Sincerity is not evidence of the content of a belief. People sincerely report experiences whose stated causes turn out to be wrong all the time — that is ordinary human cognition, not stupidity.</li>
+    <li>The cultural specificity is a problem for the supernatural reading: the identity that arrives is always locally available, and always behaves in locally expected ways.</li>
+  </ul>
+
+  <h3>And yes — deliberate faking also exists</h3>
+  <p>It would be dishonest to leave this out. Possession is a socially powerful role: it confers authority, income and deference. Cases of conscious imitation have been documented, and the incentives are obvious. The scientific position is not “nobody fakes”. It is that <strong>you cannot tell which case you are looking at by watching, and being sincere and being in an altered state are not the same question as being right about the cause.</strong></p>
+</section>
+
+<hr class="rule">
+
+<section id="s8">
+  <span class="secno">08 / culture</span>
+  <h2>One capacity, many gods</h2>
+  <p class="lede">If altered states were caused by a particular deity, they would be rare and confined to that deity's territory. They are not. They appear everywhere — and the identity that arrives is always one the local culture already knows.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 230" role="img" aria-label="Equation diagram: universal human capacities plus cultural beliefs plus local religious symbols produce a specific form of trance.">
+      <rect class="svg-box" x="12" y="24" width="180" height="70" rx="3"/>
+      <text class="svg-lbl" x="102" y="50" text-anchor="middle">Universal capacities</text>
+      <text class="svg-sm" x="102" y="68" text-anchor="middle">absorption, dissociation,</text>
+      <text class="svg-sm" x="102" y="82" text-anchor="middle">suggestibility, arousal</text>
+      <text class="svg-ttl" x="212" y="66" text-anchor="middle">+</text>
+      <rect class="svg-box" x="232" y="24" width="180" height="70" rx="3"/>
+      <text class="svg-lbl" x="322" y="50" text-anchor="middle">Cultural beliefs</text>
+      <text class="svg-sm" x="322" y="68" text-anchor="middle">who can be entered,</text>
+      <text class="svg-sm" x="322" y="82" text-anchor="middle">when, why, by whom</text>
+      <text class="svg-ttl" x="432" y="66" text-anchor="middle">+</text>
+      <rect class="svg-box" x="452" y="24" width="180" height="70" rx="3"/>
+      <text class="svg-lbl" x="542" y="50" text-anchor="middle">Local symbols</text>
+      <text class="svg-sm" x="542" y="68" text-anchor="middle">this deity, this chain,</text>
+      <text class="svg-sm" x="542" y="82" text-anchor="middle">this grain, this day</text>
+      <path class="svg-arrow" d="M322 98 V132" marker-end="url(#ah4)"/>
+      <rect x="170" y="140" width="360" height="66" rx="3" fill="var(--indigo-bg)" stroke="var(--indigo)" stroke-width="1.4"/>
+      <text class="svg-lbl" x="350" y="168" text-anchor="middle" fill="var(--indigo)" font-weight="600">A specific, recognisable form of trance</text>
+      <text class="svg-sm" x="350" y="188" text-anchor="middle" fill="var(--indigo)">the biology is shared; the person who arrives is local</text>
+      <defs><marker id="ah4" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="var(--ink2)"/></marker></defs>
+    </svg>
+    <figcaption>Change the middle and right boxes and you get a different tradition, using the same nervous system.</figcaption>
+  </figure>
+
+  <p>This is the distinction that resolves a lot of arguments. <strong>Biological capacity</strong> is the raw ability to enter and sustain a state in which attention narrows, self-monitoring drops and agency is felt differently. It appears to be part of the standard human toolkit, unevenly distributed like musical ability. <strong>Cultural interpretation</strong> supplies the content: who arrives, what they say, what it means, what happens next.</p>
+  <p>So an Indian villager experiences a village devta; a Balinese practitioner is entered by a locally specific spirit during a temple drama; a West African initiate is mounted by an orisha; a Pentecostal believer is filled with the Holy Spirit and speaks in tongues; a Siberian shaman travels and negotiates with spirits. Nobody in the Rajasthan courtyard is ever entered by an orisha. Nobody in Bali receives the Holy Spirit. That pattern is a strong clue: the biology sets the stage, the culture writes the cast list.</p>
+  <p><span class="tag t-ok"><span class="dot"></span>Supported</span> Cultural shaping of altered-state content is one of the most robust findings in psychological anthropology. Comparable work on voice-hearing found that experiences reported in the USA, Ghana and India differed systematically along cultural lines while the underlying phenomenon was shared.</p>
+</section>
+
+<hr class="rule">
+
+<section id="s9">
+  <span class="secno">09 / the loop</span>
+  <h2>The community is part of the mechanism</h2>
+  <p class="lede">Nothing in this phenomenon happens inside one skull. The audience is not watching the event; the audience is a component of it.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 470" role="img" aria-label="Circular feedback diagram: a person enters an unusual state, the community interprets it as possession, attention increases, questions are asked, the person responds, the interpretation is reinforced, the role becomes established, future rituals become more predictable, and the cycle repeats.">
+      <circle cx="350" cy="230" r="160" fill="none" stroke="var(--rule)" stroke-width="1"/>
+      <path class="svg-arrow" d="M377.8 72.4 A160 160 0 0 1 441.8 99" marker-end="url(#ah5)"/>
+      <path class="svg-arrow" d="M481.1 138.2 A160 160 0 0 1 507.6 202.2" marker-end="url(#ah5)"/>
+      <path class="svg-arrow" d="M507.6 257.8 A160 160 0 0 1 481.1 321.8" marker-end="url(#ah5)"/>
+      <path class="svg-arrow" d="M441.8 361 A160 160 0 0 1 377.8 387.6" marker-end="url(#ah5)"/>
+      <path class="svg-arrow" d="M322.2 387.6 A160 160 0 0 1 258.2 361" marker-end="url(#ah5)"/>
+      <path class="svg-arrow" d="M218.9 321.8 A160 160 0 0 1 192.4 257.8" marker-end="url(#ah5)"/>
+      <path class="svg-arrow" d="M192.4 202.2 A160 160 0 0 1 218.9 138.2" marker-end="url(#ah5)"/>
+      <path class="svg-arrow" d="M258.2 99 A160 160 0 0 1 322.2 72.4" marker-end="url(#ah5)"/>
+      <circle cx="350" cy="70" r="8" fill="var(--haldi)"/>
+      <circle cx="463" cy="117" r="8" fill="var(--indigo)"/>
+      <circle cx="510" cy="230" r="8" fill="var(--indigo)"/>
+      <circle cx="463" cy="343" r="8" fill="var(--indigo)"/>
+      <circle cx="350" cy="390" r="8" fill="var(--indigo)"/>
+      <circle cx="237" cy="343" r="8" fill="var(--indigo)"/>
+      <circle cx="190" cy="230" r="8" fill="var(--indigo)"/>
+      <circle cx="237" cy="117" r="8" fill="var(--indigo)"/>
+      <text class="svg-lbl" x="350" y="42" text-anchor="middle">Person enters an unusual state</text>
+      <text class="svg-lbl" x="482" y="106" text-anchor="start">Community reads it</text>
+      <text class="svg-lbl" x="482" y="122" text-anchor="start">as the deity</text>
+      <text class="svg-lbl" x="528" y="226" text-anchor="start">Attention sharpens,</text>
+      <text class="svg-lbl" x="528" y="242" text-anchor="start">deference begins</text>
+      <text class="svg-lbl" x="482" y="340" text-anchor="start">Questions are put</text>
+      <text class="svg-lbl" x="482" y="356" text-anchor="start">to him</text>
+      <text class="svg-lbl" x="350" y="420" text-anchor="middle">He responds; remedies are given</text>
+      <text class="svg-lbl" x="218" y="340" text-anchor="end">Responses confirm</text>
+      <text class="svg-lbl" x="218" y="356" text-anchor="end">the interpretation</text>
+      <text class="svg-lbl" x="172" y="226" text-anchor="end">His role becomes</text>
+      <text class="svg-lbl" x="172" y="242" text-anchor="end">socially fixed</text>
+      <text class="svg-lbl" x="218" y="106" text-anchor="end">Next Saturday is</text>
+      <text class="svg-lbl" x="218" y="122" text-anchor="end">more predictable</text>
+      <text class="svg-ttl" x="350" y="222" text-anchor="middle">Each turn makes</text>
+      <text class="svg-ttl" x="350" y="244" text-anchor="middle">the next turn easier</text>
+      <defs><marker id="ah5" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="var(--ink2)"/></marker></defs>
+    </svg>
+    <figcaption>A self-stabilising system. No step in it requires anyone to be dishonest, and no step requires anyone to be gullible.</figcaption>
+  </figure>
+
+  <h3>The forces in the loop</h3>
+  <div class="cols two">
+    <div class="card">
+      <h4>Social reinforcement</h4>
+      <p>Behaviours followed by attention, respect and confirmation tend to recur and sharpen. This operates below deliberate intent.</p>
+    </div>
+    <div class="card">
+      <h4>Authority</h4>
+      <p>Once a role is recognised, statements made from inside it carry weight they would not carry from the same man on Monday. Authority changes how the audience interprets ambiguity — in the speaker's favour.</p>
+    </div>
+    <div class="card">
+      <h4>Expectation</h4>
+      <p>The crowd's expectation is not passive. It shapes which of his behaviours are noticed, remembered and retold, which in turn shapes the next performance.</p>
+    </div>
+    <div class="card">
+      <h4>Conformity and cultural learning</h4>
+      <p>Everyone present learns the correct way to behave in the presence of the deity, including how to ask, how to listen, and how to report afterwards. The young learn it by watching.</p>
+    </div>
+  </div>
+
+  <div class="note">
+    <h4>Do not collapse this into “peer pressure”</h4>
+    <p>Peer pressure implies a person going along with something they privately reject. That is not what a feedback loop is. Here, the social input is genuinely changing the state itself: the arousal, the attention, the confidence in the interpretation, even the pain. Calling it peer pressure would be like calling a conversation “sound pressure”. Technically involved, entirely missing the point.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="s10">
+  <span class="secno">10 / the queue</span>
+  <h2>Why people bring their problems here</h2>
+  <p class="lede">A fever that will not break. A marriage that keeps collapsing. A debt. A son who has stopped speaking to the family. Land that two brothers both claim. These are the questions that reach the oracle — and they have something in common.</p>
+  <p>Every one of them is a problem where <strong>uncertainty is the worst part</strong>, where the options are limited, and where the alternatives on offer are expensive, distant or unavailable. In much of rural India the nearest psychiatrist may be hours away, cost a week's earnings, speak a different register of the language, and offer nothing that the family recognises as an explanation. The temple or the courtyard is close, free or cheap, open on a known day, and speaks the family's own moral language.</p>
+
+  <div class="cols two">
+    <div class="card">
+      <h4>Meaning-making</h4>
+      <p>An explanation — even one an outsider rejects — converts a formless dread into a named thing with a cause and a procedure. Humans tolerate named misfortune far better than senseless misfortune.</p>
+    </div>
+    <div class="card">
+      <h4>Uncertainty reduction</h4>
+      <p>Chronic uncertainty is itself corrosive to health and decision-making. A definite answer, even an arbitrary one, ends the paralysis of deliberation.</p>
+    </div>
+    <div class="card">
+      <h4>Emotional relief and catharsis</h4>
+      <p>Being heard, publicly, by an authority, about something shameful, is a real intervention. Much of what any therapy does begins with exactly this.</p>
+    </div>
+    <div class="card">
+      <h4>Social support</h4>
+      <p>These are family events. Ethnographic work at Indian healing temples has repeatedly emphasised that the whole family participates, stays, and is re-engaged in the sufferer's problem — a level of involvement most clinics cannot supply.</p>
+    </div>
+    <div class="card">
+      <h4>Behavioural guidance</h4>
+      <p>The oracle usually prescribes action: go, do, give, wait, apologise, return next month. Action interrupts rumination and restores a sense of control, which is a recognised therapeutic ingredient.</p>
+    </div>
+    <div class="card">
+      <h4>Hope and expectancy</h4>
+      <p>Expectation of improvement measurably improves some outcomes — most strongly symptoms mediated by perception and distress, like pain, nausea, fatigue and mood.</p>
+    </div>
+  </div>
+
+  <div class="note">
+    <h4>The distinction that must be held</h4>
+    <p>“This ritual plausibly produces real psychological and social benefits” is a claim about people, and it has substantial support. “The deity is therefore real and is causing the benefits” is a different claim, and none of the evidence above touches it. A ritual can work on a person through entirely ordinary mechanisms while its stated explanation remains untested. Both halves of that sentence matter.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="s11">
+  <span class="secno">11 / the grain</span>
+  <h2>What the handful of grain is doing</h2>
+  <p class="lede">He answers, and presses a few grains into the palm. Ash, thread, water, a knotted cloth — the object varies, the structure does not.</p>
+  <div class="cols two">
+    <div class="card">
+      <h4>It makes the encounter portable</h4>
+      <p>The ritual lasted minutes; the problem lasts months. A physical token carries the authority of that moment home and keeps it available every time it is seen or touched.</p>
+    </div>
+    <div class="card">
+      <h4>It prescribes behaviour</h4>
+      <p>Grain has to be kept somewhere, mixed with something, given to someone, returned on a date. Each instruction is a concrete action in a situation that previously offered none.</p>
+    </div>
+    <div class="card">
+      <h4>It works as a conditioned cue</h4>
+      <p>An object repeatedly paired with relief and reassurance can come to trigger part of that response on its own. This is ordinary associative learning, demonstrated in both people and animals.</p>
+    </div>
+    <div class="card">
+      <h4>It carries expectancy</h4>
+      <p>Received from a deity, in public, after being heard — the object arrives loaded with expectation, which is the active ingredient in placebo responding.</p>
+    </div>
+  </div>
+
+  <h3>Placebo, properly understood</h3>
+  <p>Placebo effects are not imagination and they are not a marker of foolishness. They are real physiological responses produced by the context of a treatment rather than its specific content. Some are opioid-mediated: the classic demonstration is that naloxone, an opioid blocker, reduces placebo analgesia — meaning the expectation had recruited the body's own pain chemistry.</p>
+
+  <div class="cols two">
+    <div class="card">
+      <h4>What placebo effects can do</h4>
+      <ul class="tight">
+        <li>Reduce pain, nausea, fatigue, itching and breathlessness</li>
+        <li>Improve mood, sleep and reported wellbeing</li>
+        <li>Improve self-reported function in some conditions</li>
+        <li>Alter measurable brain and neurochemical responses</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>What placebo effects cannot do</h4>
+      <ul class="tight">
+        <li>Clear an infection or kill a parasite</li>
+        <li>Shrink a tumour or correct an obstruction</li>
+        <li>Replace insulin, antibiotics, antiepileptics or antipsychotics</li>
+        <li>Fix a fracture or reverse organ failure</li>
+      </ul>
+    </div>
+  </div>
+  <p>Susceptibility to placebo effects is not a personality defect or a sign of low intelligence — it is a general property of how brains process expectation, and it operates in doctors, scientists and sceptics alike. The one serious danger is substitution: a remedy that relieves distress while a treatable, dangerous condition goes untreated. That risk is real and has cost lives; it is separate from any judgement about the belief system.</p>
+  <p>And once more, the limit: a placebo effect demonstrates that <em>expectation changed something in this person's body</em>. It does not demonstrate that the explanation given for the remedy is correct. Placebo effects occur with sugar pills, saline injections, sham surgery and blessed objects equally.</p>
+</section>
+
+<hr class="rule">
+
+<section id="s12">
+  <span class="secno">12 / the clinic</span>
+  <h2>Trauma, dissociation, and where medicine actually draws its line</h2>
+  <p class="lede">There is a real research literature linking some possession presentations to trauma and severe stress. It has to be reported honestly, and it has to be kept in its lane.</p>
+
+  <p>The clearest study of this kind was conducted in southwest Uganda: 119 people identified as spirit-possessed by traditional healers were compared with 71 matched non-possessed controls. The possessed group reported significantly more dissociative symptoms — both psychological and bodily — and significantly more potentially traumatising life events, with a significant association between the two. Notably, the participants themselves did not connect their symptoms to those events; the link was visible to the researchers, not to the sufferers.</p>
+  <p><span class="tag t-ok"><span class="dot"></span>Supported</span> In help-seeking, distressed populations, possession presentations are associated with trauma exposure and elevated dissociation. <span class="tag t-maybe"><span class="dot"></span>Limitation</span> Everyone in that study was a person with a problem, recruited through healers. You cannot generalise from a clinical sample to a respected village oracle who is not seeking help and has no complaint. That is a basic sampling issue, and it is routinely ignored when this research gets summarised in public.</p>
+
+  <div class="note">
+    <h4>Religious trance is not a psychiatric disorder</h4>
+    <p>Both major systems say so explicitly. ICD-11 requires that a trance or possession trance state be involuntary, unwanted, and <em>not accepted as part of a collective cultural or religious practice</em>, and that it cause significant distress or impairment. DSM-5 similarly excludes states that are a normal part of a broadly accepted collective cultural or religious practice. Under either manual, the Saturday oracle — expected, scheduled, valued, functioning normally the rest of the week — falls outside the diagnosis.</p>
+  </div>
+
+  <h3>Where a clinician would start paying attention</h3>
+  <div class="cols two">
+    <div class="card">
+      <h4>Signals of concern</h4>
+      <ul class="tight">
+        <li>Episodes are unwanted and the person wants them to stop</li>
+        <li>They occur outside the ritual setting — at work, at home, unpredictably</li>
+        <li>They cannot be ended or interrupted</li>
+        <li>Significant distress, or a decline in functioning at work or in the family</li>
+        <li>Injuries that are increasing, untreated, or involve others</li>
+        <li>Large memory gaps outside the ritual, or confusion that persists for days</li>
+        <li>Danger to the person or to anyone else</li>
+        <li>New onset in mid or later life, or with headache, fever, weakness, or first-ever seizures — which need a medical workup, not an interpretation</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Not, by themselves, signals of concern</h4>
+      <ul class="tight">
+        <li>Entering trance at the expected time in the expected place</li>
+        <li>Speaking in a different voice while in that role</li>
+        <li>Remembering little of the episode afterwards</li>
+        <li>Believing sincerely that a deity was present</li>
+        <li>Being respected, consulted or paid for the role</li>
+        <li>Being highly absorbable or highly suggestible</li>
+      </ul>
+    </div>
+  </div>
+  <p>This page makes no claim about the man in the example. Nobody has examined him, nobody has asked him whether he wants the episodes, and diagnosing a person from a description is malpractice regardless of who is doing it. The purpose of this section is the opposite: to make clear that “possession” and “illness” are separate questions, and that most people in his position are neither ill nor lying.</p>
+</section>
+
+<hr class="rule">
+
+<section id="s13">
+  <span class="secno">13 / India</span>
+  <h2>Possession and trance in India</h2>
+  <p class="lede">India has one of the world's richest and best-documented landscapes of possession — plural, regionally distinct, and studied by anthropologists and psychiatrists who often disagree with each other productively.</p>
+
+  <h3>Village deity and oracle traditions</h3>
+  <p>Across rural India, local deities are consulted through a human medium who is entered at fixed times. The medium is typically a recognised office-holder rather than a random person; entry is often hereditary or by a recognised calling, and the role carries obligations as well as authority. This is the tradition the opening example belongs to.</p>
+
+  <h3>Himalayan oracles</h3>
+  <p>In Himachal Pradesh, Uttarakhand and adjoining regions, village gods speak through mediums who deliver judgements on disputes, illness and misfortune. William Sax's long ethnography of ritual healing in the central Himalayas documents how these proceedings function partly as a <em>justice</em> mechanism: grievances too dangerous to voice directly — against a landlord, a husband, a caste superior — can be raised when the deity is the one speaking. That social function is invisible if you only ask “is the god real?”.</p>
+
+  <h3>South Indian bhūta traditions</h3>
+  <p>In coastal Karnataka, bhūta kola involves elaborately costumed performers who become the vehicle of a bhūta (a powerful spirit, often a deified ancestor or local figure), pronounce on disputes and receive homage. Peter Claus's work on Tulu traditions established a point that recurs in Indian scholarship: possession here is deeply embedded in social structure, caste relations and land rights, not merely in individual psychology.</p>
+
+  <h3>Healing temples and the Balaji literature</h3>
+  <p>Mehandipur Balaji in Dausa district, Rajasthan, is the most studied site of its kind in India. Sufferers and their families stay for extended periods; the afflicted often display possession behaviour publicly, and the framework is exorcistic rather than oracular. Two distinct literatures exist. Psychiatric surveys, going back to a 1981 study in the <em>Indian Journal of Psychiatry</em> of patients attending the temple, have examined what conditions bring people there. Anthropological and clinical-anthropological work — Antti Pakaslahti's fieldwork from 1991 onward, Sudhir Kakar's earlier account, Graham Dwyer's ethnography — has focused instead on the process: the family stays involved, the affliction is externalised into a spirit rather than into the sufferer's character, and the treatment has a public, communal structure.</p>
+  <p>That second observation matters and is worth stating carefully. <strong>Externalising a problem can be therapeutically useful</strong>: a family that says “a spirit is troubling her” may treat her better than one that says “she is mad”. Whether the outcome is better than clinical treatment, for which conditions, and at what cost, is a genuinely open empirical question — and the risks are real, including neglect of treatable illness, extended stays, financial strain and, at some sites, coercive practices.</p>
+
+  <h3>Indian psychiatric literature</h3>
+  <p>Dissociative presentations are a recurring topic in Indian psychiatry, partly because they are common in general-hospital and rural settings and frequently framed by families in possession terms. The literature includes cases where possession language accompanies epilepsy, psychosis or depression — which is the clinically important point. Reports of collective episodes in villages and schools also appear regularly in the <em>Indian Journal of Psychiatry</em> and comparable journals, illustrating how quickly a possession interpretation can spread through a group under stress.</p>
+  <p><span class="tag t-maybe"><span class="dot"></span>Note on the evidence</span> Much of this literature is ethnographic, case-based or descriptive. There are very few controlled studies, almost no physiological measurement of Indian ritual trance, and no published brain imaging of an Indian oracle in state. The honest summary: India offers extraordinary material and very thin quantitative data.</p>
+</section>
+
+<hr class="rule">
+
+<section id="s14">
+  <span class="secno">14 / comparison</span>
+  <h2>Eight traditions, side by side</h2>
+  <p class="lede">These are genuinely different practices with different histories, theologies and social functions. The table compares them; it does not merge them.</p>
+  <div class="tbl-wrap scrollx">
+  <table>
+    <thead><tr><th style="min-width:130px">Where</th><th>What it is called</th><th>Who enters it</th><th>What the community believes</th><th>What research looks at</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>India</strong><br><span class="pill">village deity</span></td>
+        <td>Devta aana, oracle possession, bhūta kola, and many regional terms</td>
+        <td>Usually a recognised medium; the role can be hereditary or by calling</td>
+        <td>The deity enters the body to advise, judge and protect the community</td>
+        <td>Ethnography of ritual healing and social justice; psychiatric work on dissociative presentations; very little physiology</td>
+      </tr>
+      <tr>
+        <td><strong>Bali, Indonesia</strong></td>
+        <td>Kerauhan and related temple trance</td>
+        <td>Temple participants and performers, often many at once</td>
+        <td>Deities or spirits temporarily enter participants during ceremony</td>
+        <td>The only field EEG recording of possession trance; long anthropological record from the 1930s onward</td>
+      </tr>
+      <tr>
+        <td><strong>Nepal and the Himalayas</strong></td>
+        <td>Dhami, jhankri, village oracles; Tibetan state and monastic oracles</td>
+        <td>Mediums, often after an initiatory illness or calling</td>
+        <td>Gods and spirits speak to resolve affliction and dispute</td>
+        <td>Anthropology of healing, initiation and authority; the initiatory-crisis pattern</td>
+      </tr>
+      <tr>
+        <td><strong>West and East Africa</strong></td>
+        <td>Zar in the Horn and Egypt; orisha and vodun traditions in West Africa; many others</td>
+        <td>Frequently women, and often people in socially constrained positions</td>
+        <td>Spirits make demands, cause affliction, and can be negotiated with</td>
+        <td>Possession as an idiom of distress; the Uganda study on trauma and dissociation sits here</td>
+      </tr>
+      <tr>
+        <td><strong>Caribbean</strong></td>
+        <td>Haitian Vodou (spirits “mount” the horse); Cuban Santería</td>
+        <td>Initiated practitioners within a ceremonial hierarchy</td>
+        <td>A specific named spirit displaces the person and acts through them</td>
+        <td>Rhythm and induction; initiation and training; the social role of the possessed</td>
+      </tr>
+      <tr>
+        <td><strong>Latin America</strong></td>
+        <td>Brazilian Spiritism, Umbanda and Candomblé mediumship</td>
+        <td>Trained mediums, often over decades of practice</td>
+        <td>Spirits of the dead communicate, advise and heal</td>
+        <td>The best-developed neuroscience: SPECT imaging during psychography and EEG comparisons of mediums with controls</td>
+      </tr>
+      <tr>
+        <td><strong>Pentecostal Christianity</strong><br><span class="pill">worldwide</span></td>
+        <td>Being filled with the Holy Spirit; glossolalia; being slain in the Spirit</td>
+        <td>Any believer; strongly linked to absorption and practice</td>
+        <td>God's Spirit fills the believer — usually framed as filling rather than displacement</td>
+        <td>Absorption, prayer practice and learned attention; imaging work on glossolalia exists but is small</td>
+      </tr>
+      <tr>
+        <td><strong>Shamanic traditions</strong><br><span class="pill">Siberia, Amazonia, Korea and more</span></td>
+        <td>Shamanic journey, spirit flight, spirit communication</td>
+        <td>Specialists selected and trained, often after an initiatory crisis</td>
+        <td>The shaman travels or negotiates with spirits, frequently retaining identity rather than being displaced</td>
+        <td>The drumming fMRI work; comparative studies of induction methods</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Three genuine differences worth noticing. <strong>Displacement versus filling:</strong> in some traditions the person is replaced, in others they are filled or accompanied — that changes the phenomenology, not just the theology. <strong>Who may enter:</strong> a specialist office in some places, anyone in the congregation in others. <strong>Purpose:</strong> divination, healing, judgement, worship or ecstatic union are not the same goal, and they shape what the state looks like.</p>
+</section>
+
+<hr class="rule">
+
+<section id="s15">
+  <span class="secno">15 / the voice</span>
+  <h2>Why the voice and face change</h2>
+  <p class="lede">This is often the most unsettling detail for an observer. It is also among the more tractable.</p>
+  <div class="cols two">
+    <div class="card">
+      <h4>Learned cultural scripts</h4>
+      <p>The deity has a known manner. Decades of exposure supply a detailed template — register, vocabulary, posture, tempo. Producing it requires no deliberation, in the same way that speaking your mother tongue requires no grammar lookup.</p>
+    </div>
+    <div class="card">
+      <h4>Altered self-representation</h4>
+      <p>If the system that normally maintains “I am this person” is running differently, behaviour is no longer being filtered through the usual self-concept. The habitual constraints on how one speaks to elders, or to a landlord, loosen.</p>
+    </div>
+    <div class="card">
+      <h4>Role enactment without deception</h4>
+      <p>Role enactment is a technical term, not an accusation. Absorbed people take on roles fully and sincerely; actors describe losing themselves in a part, and possession involves far stronger cultural stakes than any stage role.</p>
+    </div>
+    <div class="card">
+      <h4>Automatic behaviour</h4>
+      <p>Highly practised sequences run with little conscious oversight — which is also why they can feel, from the inside, like something else is producing them.</p>
+    </div>
+    <div class="card">
+      <h4>Arousal changing the voice itself</h4>
+      <p>This part is straightforwardly physical. High arousal alters breathing, laryngeal tension and muscle tone, which genuinely changes pitch, loudness and timbre. Some of the voice change is mechanics, not identity.</p>
+    </div>
+    <div class="card">
+      <h4>Social reinforcement over time</h4>
+      <p>Whichever vocal and gestural features the community recognises most strongly as the deity get reinforced across years, so the portrayal converges on the community's expectation.</p>
+    </div>
+  </div>
+  <p><span class="tag t-maybe"><span class="dot"></span>Proposed</span> Each mechanism above is supported in general psychology; their combination in ritual possession is a reasonable reconstruction rather than a measured account. No one has systematically analysed the acoustics of oracle speech against the same speaker's ordinary voice — which would be a genuinely useful and quite cheap study.</p>
+</section>
+
+<hr class="rule">
+
+<section id="s16">
+  <span class="secno">16 / the hits</span>
+  <h2>“But he knew something he could not have known”</h2>
+  <p class="lede">This is the argument that actually persuades people — far more than the chain or the voice. It deserves a careful answer rather than a dismissal, because the experience behind it is real: people do walk away stunned.</p>
+  <p>Before reaching for an extraordinary explanation, the ordinary ones have to be eliminated. They usually are not, because eliminating them requires records nobody keeps.</p>
+
+  <div class="cols two">
+    <div class="card">
+      <h4>Prior knowledge</h4>
+      <p>He has lived in this village his whole life. He knows the families, the feuds, the debts, who drinks, whose son left for the city, whose daughter's marriage talks collapsed last winter. This is the largest factor and the most consistently underestimated.</p>
+    </div>
+    <div class="card">
+      <h4>Information leakage</h4>
+      <p>The petitioner arrives with a family, and someone in that family spoke to someone. The question itself carries information: how it is phrased, what is emphasised, what is carefully avoided.</p>
+    </div>
+    <div class="card">
+      <h4>Body language and reaction reading</h4>
+      <p>Humans are good at reading faces and posture, especially familiar faces. A guess can be adjusted mid-sentence on the strength of a flinch or a nod, without either party noticing the correction.</p>
+    </div>
+    <div class="card">
+      <h4>Questioning technique</h4>
+      <p>“There is a problem in the house — an older woman?” is a question that looks like a statement. Confirmations from the petitioner get absorbed into what is later remembered as knowledge he supplied.</p>
+    </div>
+    <div class="card">
+      <h4>High-probability statements</h4>
+      <p>Some things are simply likely. Most families with a sick elder have a money worry. Most stalled marriages involve a dowry dispute or a caste objection. Naming the likely is not trickery, but it is not knowledge either.</p>
+    </div>
+    <div class="card">
+      <h4>Vagueness that the listener completes</h4>
+      <p>“Something from the past is blocking the path” fits almost any life. The listener supplies the specific event — and then remembers the specific event as having been named.</p>
+    </div>
+    <div class="card">
+      <h4>Confirmation bias and selective memory</h4>
+      <p>Hits are vivid, retold and become village stories. Misses are forgotten, reinterpreted as tests, or explained as the petitioner's lack of faith. Nobody is keeping score, so the record that survives is systematically filtered.</p>
+    </div>
+    <div class="card">
+      <h4>Hindsight bias</h4>
+      <p>After an outcome is known, an ambiguous earlier statement gets remembered as having predicted it. This is one of the best-replicated effects in cognitive psychology and it is invisible from the inside.</p>
+    </div>
+  </div>
+
+  <p>Notice what this list does <em>not</em> say: it does not say he is running a con. Every one of these mechanisms operates without deliberate deception, in people who fully believe what they are saying. A man in an altered state, drawing on a lifetime of village knowledge, reading faces, speaking in fragments, in front of an audience primed to find meaning, will produce apparent hits — and will be as surprised by them as anyone.</p>
+
+  <div class="note">
+    <h4>And if a claim survives all of that?</h4>
+    <p>Then you have something genuinely interesting, and the correct response is not belief and not dismissal. It is <strong>controlled testing</strong>. That is what the next section is for. A claim that cannot be tested stays untested; a claim that can be tested and is not, remains an anecdote no matter how many people witnessed it.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="s17">
+  <span class="secno">17 / the test</span>
+  <h2>How you would actually test an oracle</h2>
+  <p class="lede">This is a sketch of a fair study — fair in both directions. It is designed so that a genuine ability would show up clearly, and so that ordinary explanations could not produce a false positive.</p>
+
+  <figure class="fig wide">
+    <div class="scrollx">
+    <svg viewBox="0 0 760 330" style="min-width:640px" role="img" aria-label="Study design flow: preregistration, recruitment, random target selection, sealed targets, standardised questioning, recorded answers, blinded judging, statistical analysis and replication.">
+      <g>
+        <rect x="14" y="20" width="160" height="56" rx="3" fill="var(--amber-bg)" stroke="var(--amber)" stroke-width="1.2"/>
+        <text class="svg-lbl" x="94" y="42" text-anchor="middle" fill="var(--amber)">1 · Preregister</text>
+        <text class="svg-sm" x="94" y="60" text-anchor="middle" fill="var(--amber)">hypothesis, scoring, n, analysis</text>
+      </g>
+      <path class="svg-arrow" d="M174 48 H208" marker-end="url(#ah6)"/>
+      <rect class="svg-box" x="208" y="20" width="160" height="56" rx="3"/>
+      <text class="svg-lbl" x="288" y="42" text-anchor="middle">2 · Recruit</text>
+      <text class="svg-sm" x="288" y="60" text-anchor="middle">oracle consents; sitters enrolled</text>
+      <path class="svg-arrow" d="M368 48 H402" marker-end="url(#ah6)"/>
+      <rect class="svg-box" x="402" y="20" width="160" height="56" rx="3"/>
+      <text class="svg-lbl" x="482" y="42" text-anchor="middle">3 · Randomise</text>
+      <text class="svg-sm" x="482" y="60" text-anchor="middle">targets chosen by machine</text>
+      <path class="svg-arrow" d="M562 48 H596" marker-end="url(#ah6)"/>
+      <rect class="svg-box" x="596" y="20" width="152" height="56" rx="3"/>
+      <text class="svg-lbl" x="672" y="42" text-anchor="middle">4 · Seal</text>
+      <text class="svg-sm" x="672" y="60" text-anchor="middle">nobody present knows</text>
+      <path class="svg-arrow" d="M672 76 V116" marker-end="url(#ah6)"/>
+      <rect class="svg-box" x="596" y="116" width="152" height="56" rx="3"/>
+      <text class="svg-lbl" x="672" y="138" text-anchor="middle">5 · Standard questions</text>
+      <text class="svg-sm" x="672" y="156" text-anchor="middle">identical wording each time</text>
+      <path class="svg-arrow" d="M596 144 H562" marker-end="url(#ah6)"/>
+      <rect class="svg-box" x="402" y="116" width="160" height="56" rx="3"/>
+      <text class="svg-lbl" x="482" y="138" text-anchor="middle">6 · Record answers</text>
+      <text class="svg-sm" x="482" y="156" text-anchor="middle">verbatim, before any reveal</text>
+      <path class="svg-arrow" d="M402 144 H368" marker-end="url(#ah6)"/>
+      <rect x="208" y="116" width="160" height="56" rx="3" fill="var(--indigo-bg)" stroke="var(--indigo)" stroke-width="1.3"/>
+      <text class="svg-lbl" x="288" y="138" text-anchor="middle" fill="var(--indigo)">7 · Blinded judges</text>
+      <text class="svg-sm" x="288" y="156" text-anchor="middle" fill="var(--indigo)">match answers to targets</text>
+      <path class="svg-arrow" d="M208 144 H174" marker-end="url(#ah6)"/>
+      <rect x="14" y="116" width="160" height="56" rx="3" fill="var(--indigo-bg)" stroke="var(--indigo)" stroke-width="1.3"/>
+      <text class="svg-lbl" x="94" y="138" text-anchor="middle" fill="var(--indigo)">8 · Compare to chance</text>
+      <text class="svg-sm" x="94" y="156" text-anchor="middle" fill="var(--indigo)">preplanned statistics only</text>
+      <path class="svg-arrow" d="M94 172 V212" marker-end="url(#ah6)"/>
+      <rect x="14" y="212" width="734" height="52" rx="3" fill="var(--moss-bg)" stroke="var(--moss)" stroke-width="1.2"/>
+      <text class="svg-lbl" x="381" y="234" text-anchor="middle" fill="var(--moss)">9 · Replicate — different oracle, different village, independent team, same preregistered protocol</text>
+      <text class="svg-sm" x="381" y="252" text-anchor="middle" fill="var(--moss)">a single positive result is a lead, never a finding</text>
+      <text class="svg-sm" x="14" y="296">Blinding at steps 4–7 is what makes the result mean anything. Break it anywhere and the study is decorative.</text>
+      <defs><marker id="ah6" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="var(--ink2)"/></marker></defs>
+    </svg>
+    </div>
+  </figure>
+
+  <h3>What each safeguard is actually for</h3>
+  <div class="cols two">
+    <div class="card">
+      <h4>Preregistration</h4>
+      <p>You publish the hypothesis, sample size, scoring rules and analysis before collecting data. This blocks the commonest way false results appear: deciding after the fact which measure counts as success.</p>
+    </div>
+    <div class="card">
+      <h4>Randomisation</h4>
+      <p>Targets are selected by a random process, not chosen by a person. Human choice is patterned and guessable; randomisation removes that channel entirely.</p>
+    </div>
+    <div class="card">
+      <h4>Blinding</h4>
+      <p>Nobody in the room — not the oracle, not the sitter, not the researcher — knows the target. Otherwise unconscious cueing does the work, and it does not require anyone to cheat.</p>
+    </div>
+    <div class="card">
+      <h4>Controls</h4>
+      <p>Run non-oracle participants through the identical procedure. Ordinary people making sensible guesses score above zero; the only meaningful question is whether the oracle scores above <em>them</em>.</p>
+    </div>
+    <div class="card">
+      <h4>Adequate sample size</h4>
+      <p>Twenty sessions cannot detect a small effect and will produce eye-catching noise. The number of trials is calculated in advance from the smallest effect worth caring about.</p>
+    </div>
+    <div class="card">
+      <h4>Objective scoring</h4>
+      <p>Judges who do not know which target belongs to which reading rank the transcripts. This defeats the vagueness problem: a statement that fits every target cannot help the ranking.</p>
+    </div>
+  </div>
+
+  <div class="note">
+    <h4>Two things that make this study worth doing properly</h4>
+    <p>First, it is <strong>respectful</strong>. It does not presume fraud; it presumes that a serious claim deserves a serious test, conducted with the practitioner's consent and in a way he could in principle pass.</p>
+    <p>Second, it is <strong>informative either way</strong>. A negative result tells you that the ordinary explanations suffice. A well-replicated positive result would be one of the most important findings in the history of psychology — which is exactly why the bar is set this high. Related claims have been tested this way before; the pattern in the published record is that effects tend to shrink or disappear as blinding tightens and preregistration is enforced, which is itself informative.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="s18">
+  <span class="secno">18 / limits</span>
+  <h2>What science is not equipped to settle</h2>
+  <p class="lede">This section exists so that nothing above gets over-read. The reach of a method is part of its honesty.</p>
+  <div class="cols two">
+    <div class="card">
+      <h4>Science can investigate</h4>
+      <ul class="tight">
+        <li>Brain activity, blood flow, electrical rhythms</li>
+        <li>Heart rate, hormones, breathing, skin conductance</li>
+        <li>Behaviour, speech, movement, facial expression</li>
+        <li>Reported pain and measured injury</li>
+        <li>Memory, attention, suggestibility, absorption</li>
+        <li>Social effects on individuals and groups</li>
+        <li>Whether a specific, repeatable claim holds up under blinding</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Science cannot directly establish</h4>
+      <ul class="tight">
+        <li>Whether a deity exists</li>
+        <li>Whether a particular being entered a particular body</li>
+        <li>The ultimate nature of consciousness or spirit</li>
+        <li>Whether a life has meaning, or which meaning</li>
+        <li>What ought to be sacred</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>The reason is structural, not political. Scientific investigation works on claims that make some observable difference — if a claim is true you should see X, if false you should see Y. A supernatural agent described as undetectable in principle makes no such difference, so no instrument engages with it. That is a limit on the method, not a disproof of the claim.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 170" role="img" aria-label="Two statements contrasted: science has not demonstrated supernatural possession, versus science has demonstrated supernatural beings are impossible; the second does not follow from the first.">
+      <rect x="14" y="18" width="300" height="80" rx="3" fill="var(--moss-bg)" stroke="var(--moss)" stroke-width="1.2"/>
+      <text class="svg-lbl" x="164" y="46" text-anchor="middle" fill="var(--moss)">“Science has not demonstrated</text>
+      <text class="svg-lbl" x="164" y="64" text-anchor="middle" fill="var(--moss)">supernatural possession.”</text>
+      <text class="svg-sm" x="164" y="86" text-anchor="middle" fill="var(--moss)">accurate</text>
+      <rect x="386" y="18" width="300" height="80" rx="3" fill="var(--plum-bg)" stroke="var(--plum)" stroke-width="1.2" stroke-dasharray="5 4"/>
+      <text class="svg-lbl" x="536" y="46" text-anchor="middle" fill="var(--plum)">“Science has demonstrated that</text>
+      <text class="svg-lbl" x="536" y="64" text-anchor="middle" fill="var(--plum)">supernatural beings are impossible.”</text>
+      <text class="svg-sm" x="536" y="86" text-anchor="middle" fill="var(--plum)">does not follow</text>
+      <line x1="318" y1="58" x2="382" y2="58" stroke="var(--rule2)" stroke-width="1.4"/>
+      <line x1="336" y1="40" x2="364" y2="76" stroke="var(--plum)" stroke-width="2"/>
+      <line x1="364" y1="40" x2="336" y2="76" stroke="var(--plum)" stroke-width="2"/>
+      <text class="svg-sm" x="350" y="136" text-anchor="middle">Absence of demonstration is not demonstration of absence.</text>
+      <text class="svg-sm" x="350" y="154" text-anchor="middle">Anyone who tells you otherwise is selling a conclusion, not reporting one.</text>
+    </svg>
+  </figure>
+  <p>The same discipline cuts the other way, and it is worth saying plainly to both audiences. A believer cannot claim scientific support for possession, because none exists. A sceptic cannot claim science has refuted it, because refutation was never on the table. What science has done is show that <em>every observable feature of the ritual has a candidate natural explanation</em> — which shifts the burden, without closing the question.</p>
+</section>
+
+<hr class="rule">
+
+<section id="s19">
+  <span class="secno">19 / the ledger</span>
+  <h2>What is known, what is proposed, what is open</h2>
+  <div class="tbl-wrap scrollx">
+  <table>
+    <thead><tr><th style="min-width:300px">Question</th><th>Status</th><th>Reading</th></tr></thead>
+    <tbody>
+      <tr><td>Can humans enter altered states during rituals?</td><td><span class="tag t-ok"><span class="dot"></span>Established</span></td><td>Documented in hundreds of societies and in physiological recordings.</td></tr>
+      <tr><td>Can trance produce measurable physiological changes?</td><td><span class="tag t-ok"><span class="dot"></span>Established</span></td><td>EEG, heart rate and imaging differences have been recorded — though sample sizes are small and the patterns are not unique to trance.</td></tr>
+      <tr><td>Can pain perception change with context?</td><td><span class="tag t-ok"><span class="dot"></span>Established</span></td><td>One of the most thoroughly demonstrated findings in the whole of pain science.</td></tr>
+      <tr><td>Can culture shape the content of possession experiences?</td><td><span class="tag t-ok"><span class="dot"></span>Established</span></td><td>The identity that arrives is reliably local.</td></tr>
+      <tr><td>Does dissociation occur, and can it happen in healthy people?</td><td><span class="tag t-ok"><span class="dot"></span>Established</span></td><td>It exists on a continuum. Most of it is not pathological.</td></tr>
+      <tr><td>Are all possession experiences psychiatric disorders?</td><td><span class="tag t-ok"><span class="dot"></span>No</span></td><td>Both DSM-5 and ICD-11 explicitly exclude accepted cultural and religious practice.</td></tr>
+      <tr><td>Are all possession practitioners consciously faking?</td><td><span class="tag t-ok"><span class="dot"></span>No</span></td><td>Involuntary altered states in healthy people are well documented. Some faking certainly occurs; observation alone cannot tell you which is which.</td></tr>
+      <tr><td>Is the exact brain mechanism of ritual possession known?</td><td><span class="tag t-maybe"><span class="dot"></span>No</span></td><td>Small studies in adjacent traditions give leads. No village oracle has ever been scanned mid-state.</td></tr>
+      <tr><td>Do neurotransmitters cause possession?</td><td><span class="tag t-maybe"><span class="dot"></span>Unproven</span></td><td>Arousal chemistry is involved in intense ritual. “Dopamine causes trance” is not a scientific statement.</td></tr>
+      <tr><td>Has science demonstrated that gods enter human bodies?</td><td><span class="tag t-out"><span class="dot"></span>No</span></td><td>No study has demonstrated this, and no currently available method could.</td></tr>
+      <tr><td>Has science demonstrated that gods do not exist?</td><td><span class="tag t-out"><span class="dot"></span>No</span></td><td>Outside what empirical method can establish, in either direction.</td></tr>
+      <tr><td>Can extraordinary claims of hidden knowledge be tested?</td><td><span class="tag t-ok"><span class="dot"></span>Yes</span></td><td>Any specific, repeatable claim can be tested under blinding. Untestable claims remain untested, which is a different thing from being false.</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="s20">
+  <span class="secno">20 / the whole picture</span>
+  <h2>One diagram for all of it</h2>
+  <figure class="fig">
+    <svg viewBox="0 0 700 880" role="img" aria-label="Integrated model from culture through religious belief and ritual context, splitting into expectation and social input, converging on brain and body, then attention and arousal, absorption, altered agency, altered self-state, altered pain perception, behaviour, community response and cultural reinforcement, looping back to culture.">
+      <defs><marker id="ah7" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="var(--ink2)"/></marker></defs>
+      <rect x="250" y="14" width="200" height="42" rx="3" fill="var(--indigo-bg)" stroke="var(--indigo)" stroke-width="1.4"/>
+      <text class="svg-lbl" x="350" y="40" text-anchor="middle" fill="var(--indigo)" font-weight="600">CULTURE</text>
+      <path class="svg-arrow" d="M350 56 V78" marker-end="url(#ah7)"/>
+      <rect class="svg-box" x="250" y="78" width="200" height="40" rx="3"/>
+      <text class="svg-lbl" x="350" y="103" text-anchor="middle">Religious belief</text>
+      <path class="svg-arrow" d="M350 118 V140" marker-end="url(#ah7)"/>
+      <rect class="svg-box" x="250" y="140" width="200" height="40" rx="3"/>
+      <text class="svg-lbl" x="350" y="165" text-anchor="middle">Ritual context</text>
+      <path class="svg-arrow" d="M300 180 C240 196 200 196 170 208" marker-end="url(#ah7)"/>
+      <path class="svg-arrow" d="M400 180 C460 196 500 196 530 208" marker-end="url(#ah7)"/>
+      <rect class="svg-box" x="70" y="208" width="200" height="40" rx="3"/>
+      <text class="svg-lbl" x="170" y="233" text-anchor="middle">Expectation</text>
+      <rect class="svg-box" x="430" y="208" width="200" height="40" rx="3"/>
+      <text class="svg-lbl" x="530" y="233" text-anchor="middle">Social input</text>
+      <path class="svg-arrow" d="M170 248 C170 278 260 280 320 292" marker-end="url(#ah7)"/>
+      <path class="svg-arrow" d="M530 248 C530 278 440 280 380 292" marker-end="url(#ah7)"/>
+      <rect x="250" y="292" width="200" height="44" rx="3" fill="var(--indigo-bg)" stroke="var(--indigo)" stroke-width="1.4"/>
+      <text class="svg-lbl" x="350" y="319" text-anchor="middle" fill="var(--indigo)" font-weight="600">BRAIN + BODY</text>
+      <path class="svg-arrow" d="M350 336 V358" marker-end="url(#ah7)"/>
+      <rect class="svg-box" x="250" y="358" width="200" height="40" rx="3"/>
+      <text class="svg-lbl" x="350" y="383" text-anchor="middle">Attention and arousal</text>
+      <path class="svg-arrow" d="M350 398 V420" marker-end="url(#ah7)"/>
+      <rect class="svg-box" x="250" y="420" width="200" height="40" rx="3"/>
+      <text class="svg-lbl" x="350" y="445" text-anchor="middle">Absorption / trance</text>
+      <path class="svg-arrow" d="M350 460 V482" marker-end="url(#ah7)"/>
+      <rect class="svg-box" x="250" y="482" width="200" height="40" rx="3"/>
+      <text class="svg-lbl" x="350" y="507" text-anchor="middle">Altered sense of agency</text>
+      <path class="svg-arrow" d="M350 522 V544" marker-end="url(#ah7)"/>
+      <rect class="svg-box" x="250" y="544" width="200" height="40" rx="3"/>
+      <text class="svg-lbl" x="350" y="569" text-anchor="middle">Altered self-state</text>
+      <path class="svg-arrow" d="M350 584 V606" marker-end="url(#ah7)"/>
+      <rect class="svg-box" x="250" y="606" width="200" height="40" rx="3"/>
+      <text class="svg-lbl" x="350" y="631" text-anchor="middle">Altered pain perception</text>
+      <path class="svg-arrow" d="M350 646 V668" marker-end="url(#ah7)"/>
+      <rect x="250" y="668" width="200" height="42" rx="3" fill="var(--moss-bg)" stroke="var(--moss)" stroke-width="1.3"/>
+      <text class="svg-lbl" x="350" y="694" text-anchor="middle" fill="var(--moss)" font-weight="600">BEHAVIOUR</text>
+      <path class="svg-arrow" d="M350 710 V732" marker-end="url(#ah7)"/>
+      <rect class="svg-box" x="250" y="732" width="200" height="40" rx="3"/>
+      <text class="svg-lbl" x="350" y="757" text-anchor="middle">Community response</text>
+      <path class="svg-arrow" d="M350 772 V794" marker-end="url(#ah7)"/>
+      <rect class="svg-box" x="250" y="794" width="200" height="40" rx="3"/>
+      <text class="svg-lbl" x="350" y="819" text-anchor="middle">Cultural reinforcement</text>
+      <path d="M450 814 C640 814 672 700 672 420 C672 140 610 35 462 35" fill="none" stroke="var(--haldi)" stroke-width="1.8" stroke-dasharray="6 5" marker-end="url(#ah8)"/>
+      <defs><marker id="ah8" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="var(--haldi)"/></marker></defs>
+      <text class="svg-sm" x="690" y="430" text-anchor="middle" fill="var(--haldi)" transform="rotate(90 690 430)">the loop closes: this week feeds next week</text>
+    </svg>
+  </figure>
+
+  <h3>Every arrow, explained</h3>
+  <ul class="tight">
+    <li><strong>Culture → religious belief.</strong> A shared inherited framework supplies which beings exist, what they want and how they announce themselves.</li>
+    <li><strong>Religious belief → ritual context.</strong> Belief specifies the correct occasion: the day, the place, the offerings, the sequence.</li>
+    <li><strong>Ritual context → expectation.</strong> Being in that setting activates highly specific predictions in everyone present, including the medium.</li>
+    <li><strong>Ritual context → social input.</strong> The same setting assembles the crowd, the drums, the deference and the queue of petitioners.</li>
+    <li><strong>Expectation + social input → brain and body.</strong> Both converge on one nervous system. Expectation sets the priors; social input supplies arousal, rhythm and confirmation.</li>
+    <li><strong>Brain and body → attention and arousal.</strong> The first measurable shift: focus narrows, sympathetic activation rises.</li>
+    <li><strong>Attention and arousal → absorption.</strong> Sustained narrow focus tips into a qualitatively different state; external input is damped.</li>
+    <li><strong>Absorption → altered agency.</strong> With self-monitoring reduced, the signal that normally tags actions as self-caused becomes unreliable.</li>
+    <li><strong>Altered agency → altered self-state.</strong> Once actions are not felt as one's own, the most available interpretation — supplied by culture — is that someone else is here.</li>
+    <li><strong>Altered self-state → altered pain.</strong> The same shift changes how nociceptive signals are weighted, and the deity's identity carries the expectation of not suffering.</li>
+    <li><strong>All of it → behaviour.</strong> Voice, posture, gesture and speech now follow the deity's script.</li>
+    <li><strong>Behaviour → community response.</strong> Recognition, deference, questions, gratitude.</li>
+    <li><strong>Community response → cultural reinforcement.</strong> The episode is retold; the account becomes part of what everyone knows.</li>
+    <li><strong>Cultural reinforcement → culture.</strong> The loop closes. Each Saturday makes the next Saturday's belief, expectation and state a little stronger and a little more reliable.</li>
+  </ul>
+</section>
+
+<hr class="rule">
+
+<section id="s21">
+  <span class="secno">21 / the answer</span>
+  <h2 class="big-answer">So what is happening to him?</h2>
+  <p class="lede">The question, in full: when someone says <em>devta mere sharir mein aa gaye</em>, and genuinely behaves differently, strikes himself with a chain, appears to tolerate the pain, and answers people's questions — what does science think may be going on?</p>
+
+  <h3>Layer 1 — what is directly observable</h3>
+  <p>A change in posture, facial expression, voice and vocabulary. Rhythmic movement, trembling, high physical exertion. Signs of autonomic arousal: raised heart rate, sweating, altered breathing. Self-inflicted blows with an iron chain, producing real tissue damage, with markedly less pain behaviour than an observer expects. Fluent verbal interaction with petitioners, in a recognisable persona. Afterwards, a return to ordinary behaviour, often with patchy memory of the episode. A community that treats all of this as the deity's presence. Every item on this list can be recorded on video, on a heart-rate monitor, or in a clinical examination. None of it is in dispute.</p>
+
+  <h3>Layer 2 — the mechanisms with scientific support</h3>
+  <p>A lifetime of cultural learning supplies a detailed template of what possession looks like. Ritual cues and expectation prime the state before it begins. Rhythm, exertion and crowd arousal drive attention into deep absorption, at which point external input is damped and self-monitoring recedes. In that state, the brain's construction of agency becomes unreliable — the actions continue, the feeling of authoring them does not — and the culture immediately supplies a name for whoever is authoring them instead. Pain is modulated hard by attention, expectation, meaning, arousal, dissociation and the body's own opioid system, which is why the chain does not produce the response it would in his kitchen. His answers draw on decades of intimate local knowledge, subtle reading of the petitioner, and statements loose enough for listeners to complete — while the community's memory keeps the hits and discards the misses. Social feedback stabilises the whole arrangement, so that next Saturday runs faster and cleaner than the last.</p>
+  <p>Every clause in that paragraph rests on published research, though with two honest qualifications: almost all of it is transferred from adjacent populations rather than measured in Indian village oracles, and the relative weight of each mechanism in any individual case is unknown.</p>
+
+  <h3>Layer 3 — what remains outside established evidence</h3>
+  <p>Whether a deity actually enters his body. No study has demonstrated it. No study has refuted it. No available instrument addresses it. Science has shown that everything visible in the courtyard has a plausible natural account — and that is a different claim from having shown that nothing else is present. Anyone who tells you the matter is settled, in either direction, has stopped doing science and started doing advocacy.</p>
+
+  <div class="note big-answer" style="border-left:3px solid var(--haldi)">
+    <p style="font-family:Fraunces,serif; font-size:19px; line-height:1.45; max-width:54ch; margin:0">The scientific question is not simply “fake or real?” The scientifically useful question is: what measurable psychological, neurological, physiological and social processes are occurring, and which claims can be experimentally tested?</p>
+  </div>
+
+  <p>One last thing, aimed at whoever you are about to discuss this with. The man in the courtyard is, in the overwhelming majority of such cases, neither a fraud nor a patient. He is a person doing something human beings have done in nearly every society we know of, in a form his particular village taught him, with a nervous system that works the way everyone's does. Understanding the mechanism does not require insulting him — and insulting him was never any part of understanding the mechanism.</p>
+</section>
+
+<hr class="rule">
+
+<section id="s22">
+  <span class="secno">22 / sources</span>
+  <h2>References</h2>
+  <p>Peer-reviewed sources for the main claims. Where a study is small or preliminary, that is stated in the text above rather than hidden here.</p>
+
+  <h3>Trance and possession: physiology and imaging</h3>
+  <ol class="refs">
+    <li>Oohashi T, Kawai N, Honda M, Nakamura S, Morimoto M, Nishina E, Maekawa T. <strong>Electroencephalographic measurement of possession trance in the field.</strong> <span class="meta">Clinical Neurophysiology 113(3):435–445, 2002. PMID 11897544.</span> Portable EEG on three Balinese men during a ritual drama; one entered trance, showing raised theta and alpha power and no epileptiform activity. <a href="https://pubmed.ncbi.nlm.nih.gov/11897544">pubmed.ncbi.nlm.nih.gov/11897544</a></li>
+    <li>Hove MJ, Stelzer J, Nierhaus T, Thiel SD, Gundlach C, Margulies DS, Van Dijk KRA, Turner R, Keller PE, Merker B. <strong>Brain network reconfiguration and perceptual decoupling during an absorptive state of consciousness.</strong> <span class="meta">Cerebral Cortex 26(7):3116–3124, 2016. doi:10.1093/cercor/bhv137.</span> fMRI in 15 experienced shamanic practitioners entering trance to rhythmic drumming; stronger hubs in posterior cingulate, dorsal anterior cingulate and insula, with reduced auditory-pathway connectivity. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4898667">PMC4898667</a></li>
+    <li>Peres JF, Moreira-Almeida A, Caixeta L, Leao F, Newberg A. <strong>Neuroimaging during trance state: a contribution to the study of dissociation.</strong> <span class="meta">PLoS ONE 7(11):e49360, 2012. doi:10.1371/journal.pone.0049360.</span> SPECT in ten Brazilian mediums during psychographic writing; experienced mediums showed reduced activity in several regions while producing more complex text. Small sample, exploratory. <a href="https://jdc.jefferson.edu/jmbcimfp/8">jdc.jefferson.edu/jmbcimfp/8</a></li>
+    <li>Bastos MAV Jr, Bastos PRHO, Osório IHS, Muass KARC, Iandoli D Jr, Lucchetti G. <strong>Frontal electroencephalographic activity and mediumship: a comparative study between spiritist mediums and controls.</strong> <span class="meta">Archives of Clinical Psychiatry 43(2), 2016. doi:10.1590/0101-60830000000076.</span> Ten mediums and ten controls from the same religious setting; group differences in frontal beta and theta power. The authors frame it against the absorption hypothesis.</li>
+  </ol>
+
+  <h3>Ritual pain, exertion and prosociality</h3>
+  <ol class="refs" start="5">
+    <li>Xygalatas D, Mitkidis P, Fischer R, Reddish P, Skewes J, Geertz AW, Roepstorff A, Bulbulia J. <strong>Extreme rituals promote prosociality.</strong> <span class="meta">Psychological Science 24(8):1602–1605, 2013.</span> 86 men in Mauritius at Thaipusam; performers and observers of the high-intensity kavadi donated more than participants in low-intensity prayer, with reported pain predicting donation size. Naturalistic and correlational.</li>
+    <li>Xygalatas D and colleagues. <strong>Study of health effects of Thaipusam participation using wearable monitors.</strong> <span class="meta">Current Anthropology, 2019.</span> 39 men in Mauritius monitored for sleep, activity and stress before, during and after the festival; no lasting harm detected among body-piercing participants, with self-reported health and quality of life somewhat improved. Self-selected participants, small sample.</li>
+    <li>Konvalinka I, Xygalatas D, Bulbulia J, Schjødt U, Jegindø EM, Wallot S, Van Orden G, Roepstorff A. <strong>Synchronized arousal between performers and related spectators in a fire-walking ritual.</strong> <span class="meta">PNAS 108(20):8514–8519, 2011.</span> Heart-rate monitoring showed arousal synchrony between fire-walkers and socially related spectators, but not unrelated onlookers.</li>
+    <li>Tarr B, Launay J, Benson C, Dunbar RIM. <strong>Naltrexone blocks endorphins released when dancing in synchrony.</strong> <span class="meta">Adaptive Human Behavior and Physiology, 2017.</span> Double-blind placebo-controlled: blocking opioid receptors abolished the post-dance rise in pain threshold, confirming endogenous opioid involvement.</li>
+    <li>Tarr B, Launay J, Cohen E, Dunbar R. <strong>Synchrony and exertion during dance independently raise pain threshold and encourage social bonding.</strong> <span class="meta">Biology Letters 11(10):20150767, 2015.</span></li>
+  </ol>
+
+  <h3>Pain, placebo and expectation</h3>
+  <ol class="refs" start="10">
+    <li>Melzack R, Wall PD. <strong>Pain mechanisms: a new theory.</strong> <span class="meta">Science 150(3699):971–979, 1965.</span> The gate-control paper that separated nociceptive input from pain experience.</li>
+    <li>Rainville P, Duncan GH, Price DD, Carrier B, Bushnell MC. <strong>Pain affect encoded in human anterior cingulate but not somatosensory cortex.</strong> <span class="meta">Science 277(5328):968–971, 1997.</span> Hypnotic suggestion altered the unpleasantness of pain and the corresponding anterior cingulate response, while sensory intensity coding was unchanged.</li>
+    <li>Levine JD, Gordon NC, Fields HL. <strong>The mechanism of placebo analgesia.</strong> <span class="meta">The Lancet 312(8091):654–657, 1978.</span> Naloxone reduced placebo analgesia, implicating endogenous opioids.</li>
+    <li>Tracey I, Mantyh PW. <strong>The cerebral signature for pain perception and its modulation.</strong> <span class="meta">Neuron 55(3):377–391, 2007.</span></li>
+    <li>Wager TD, Atlas LY. <strong>The neuroscience of placebo effects: connecting context, learning and health.</strong> <span class="meta">Nature Reviews Neuroscience 16(7):403–418, 2015.</span></li>
+  </ol>
+
+  <h3>Agency, self, absorption and suggestion</h3>
+  <ol class="refs" start="15">
+    <li>Haggard P. <strong>Sense of agency in the human brain.</strong> <span class="meta">Nature Reviews Neuroscience 18(4):196–207, 2017.</span></li>
+    <li>Blakemore SJ, Wolpert DM, Frith CD. <strong>Abnormalities in the awareness of action.</strong> <span class="meta">Trends in Cognitive Sciences 6(6):237–242, 2002.</span> The comparator account of why self-generated actions feel self-generated.</li>
+    <li>Oakley DA, Halligan PW. <strong>Hypnotic suggestion: opportunities for cognitive neuroscience.</strong> <span class="meta">Nature Reviews Neuroscience 14(8):565–576, 2013.</span> Suggested involuntariness produces sincere reports of loss of control with distinct brain correlates.</li>
+    <li>Tellegen A, Atkinson G. <strong>Openness to absorbing and self-altering experiences (“absorption”), a trait related to hypnotic susceptibility.</strong> <span class="meta">Journal of Abnormal Psychology 83(3):268–277, 1974.</span> The origin of the absorption construct used throughout this literature.</li>
+  </ol>
+
+  <h3>Possession, trauma, culture and psychiatry</h3>
+  <ol class="refs" start="19">
+    <li>van Duijl M, Nijenhuis E, Komproe IH, Gernaat HBPE, de Jong JTVM. <strong>Dissociative symptoms and reported trauma among patients with spirit possession and matched healthy controls in Uganda.</strong> <span class="meta">Culture, Medicine and Psychiatry 34(2):380–400, 2010. doi:10.1007/s11013-010-9171-1.</span> 119 possessed individuals versus 71 matched controls; more dissociation and more potentially traumatising events in the possessed group. Clinical sample; not generalisable to non-help-seeking practitioners. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2878595">PMC2878595</a></li>
+    <li>van Duijl M, Kleijn W, de Jong J. <strong>Unravelling the spirits' message: help-seeking steps and explanatory models among patients suffering from spirit possession in Uganda.</strong> <span class="meta">International Journal of Mental Health Systems 8:24, 2014. doi:10.1186/1752-4458-8-24.</span> <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4060147">PMC4060147</a></li>
+    <li>World Health Organization. <strong>ICD-11, 6B62 trance disorder and 6B63 possession trance disorder.</strong> <span class="meta">International Classification of Diseases, 11th revision.</span> Both require that the state be involuntary, unwanted, distressing or impairing, and not accepted as part of a collective cultural or religious practice.</li>
+    <li>American Psychiatric Association. <strong>DSM-5-TR, dissociative disorders.</strong> Possession-form presentations that are a normal part of a broadly accepted cultural or religious practice are excluded from diagnosis.</li>
+    <li>Pietkiewicz IJ, Kłosińska U, Tomalski R. <strong>Trapped between theological and medical notions of possession: a case of possession trance disorder with a 3-year follow-up.</strong> <span class="meta">Frontiers in Psychiatry 13:891859, 2022. doi:10.3389/fpsyt.2022.891859.</span> Useful on how diagnostic labels interact with religious explanatory models. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9199574">PMC9199574</a></li>
+    <li>Luhrmann TM, Padmavati R, Tharoor H, Osei A. <strong>Differences in voice-hearing experiences of people with psychosis in the USA, India and Ghana.</strong> <span class="meta">British Journal of Psychiatry 206(1):41–44, 2015.</span> Cultural shaping of experience within a shared underlying phenomenon.</li>
+    <li>Seligman R, Kirmayer LJ. <strong>Dissociative experience and cultural neuroscience: narrative, metaphor and mechanism.</strong> <span class="meta">Culture, Medicine and Psychiatry 32(1):31–64, 2008.</span></li>
+  </ol>
+
+  <h3>India: ethnography and clinical literature</h3>
+  <ol class="refs" start="26">
+    <li>Pakaslahti A. <strong>Family-centered treatment of mental health problems at the Balaji temple in Rajasthan.</strong> <span class="meta">Studia Orientalia 84:129–166, 1998.</span> Long-term fieldwork by a clinical psychiatrist at Mehandipur Balaji from 1991, emphasising the family's role in treatment. <a href="https://journal.fi/store/article/view/45132">journal.fi/store/article/view/45132</a></li>
+    <li>Satija DC, Singh D, Nathawat SS, Sharma V. <strong>A psychiatric study of patients attending Mehandipur Balaji temple.</strong> <span class="meta">Indian Journal of Psychiatry 23(3):247–250, 1981.</span></li>
+    <li>Sax WS. <strong>God of Justice: Ritual Healing and Social Justice in the Central Himalayas.</strong> <span class="meta">Oxford University Press, 2009.</span> Himalayan oracle practice as a mechanism of dispute resolution and justice.</li>
+    <li>Claus PJ. <strong>Spirit possession and spirit mediumship from the perspective of Tulu oral traditions.</strong> <span class="meta">Culture, Medicine and Psychiatry 3(1):29–52, 1979.</span> The foundational study of South Indian bhūta traditions in this literature.</li>
+    <li>Kakar S. <strong>Shamans, Mystics and Doctors: A Psychological Inquiry into India and its Healing Traditions.</strong> <span class="meta">Knopf / Oxford University Press, 1982.</span></li>
+    <li>Dwyer G. <strong>The Divine and the Demonic: Supernatural Affliction and its Treatment in North India.</strong> <span class="meta">RoutledgeCurzon, 2003.</span></li>
+    <li>Chowdhury AN, Brahma A. <strong>An epidemic of mass hysteria in a village in West Bengal.</strong> <span class="meta">Indian Journal of Psychiatry 47(2):106–108, 2005.</span> On how possession interpretations spread through groups under stress.</li>
+  </ol>
+
+  <h3>Cross-cultural scope, and testing extraordinary claims</h3>
+  <ol class="refs" start="33">
+    <li>Bourguignon E. <strong>Religion, Altered States of Consciousness and Social Change.</strong> <span class="meta">Ohio State University Press, 1973.</span> The classic cross-cultural survey reporting institutionalised altered states in the large majority of 488 societies. Dated methodology; treat the exact figure as indicative.</li>
+    <li>Suryani LK, Jensen GD. <strong>Trance and Possession in Bali.</strong> <span class="meta">Oxford University Press, 1993.</span> Book-length treatment by a Balinese psychiatrist; its equation of Balinese trance with multiple personality disorder is contested.</li>
+    <li>Hyman R. <strong>Cold reading: how to convince strangers that you know all about them.</strong> <span class="meta">The Zetetic (later Skeptical Inquirer), 1977.</span> The standard analysis of the techniques described in section 16.</li>
+    <li>Forer BR. <strong>The fallacy of personal validation: a classroom demonstration of gullibility.</strong> <span class="meta">Journal of Abnormal and Social Psychology 44(1):118–123, 1949.</span> Why general statements feel personally specific.</li>
+    <li>Ritchie SJ, Wiseman R, French CC. <strong>Failing the future: three unsuccessful attempts to replicate Bem's retroactive facilitation of recall effect.</strong> <span class="meta">PLoS ONE 7(3):e33423, 2012.</span> A worked example of why replication and preregistration decide these questions.</li>
+  </ol>
+
+  <div class="note">
+    <p>Where this page says “supported”, it means several independent studies point the same way. Where it says “proposed”, the idea is coherent and partially evidenced but not established — and a good deal of what you will read elsewhere about the neuroscience of possession sits in that second category while being written as if it were the first.</p>
+  </div>
+</section>
+
+<footer>
+  <p>Written as an educational explainer. It is not medical advice and makes no diagnosis of any individual. If trance episodes are unwanted, uncontrollable, spreading outside their ritual setting, or producing injuries, that is a reason to see a doctor — and wounds from ritual practice need ordinary wound care and tetanus protection regardless of how little they hurt at the time.</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function(){
+  var prog=document.getElementById('prog');
+  var sections=[].slice.call(document.querySelectorAll('main section'));
+  var toc=document.getElementById('toclist');
+  sections.forEach(function(s){
+    var h=s.querySelector('h2'); if(!h) return;
+    var li=document.createElement('li');
+    var a=document.createElement('a');
+    a.href='#'+s.id; a.textContent=h.textContent; a.dataset.for=s.id;
+    li.appendChild(a); toc.appendChild(li);
+  });
+  var links=[].slice.call(toc.querySelectorAll('a'));
+  function onScroll(){
+    var h=document.documentElement;
+    var pct=h.scrollTop/(h.scrollHeight-h.clientHeight||1);
+    prog.style.width=Math.min(100,Math.max(0,pct*100))+'%';
+    var cur=sections[0];
+    sections.forEach(function(s){ if(s.getBoundingClientRect().top<140) cur=s; });
+    links.forEach(function(a){ a.classList.toggle('on', a.dataset.for===cur.id); });
+  }
+  document.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  // theme toggle
+  var t=document.getElementById('theme');
+  t.addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    if(!cur){ cur=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'; }
+    var next=cur==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',next);
+    try{localStorage.setItem('pt-theme',next);}catch(e){}
+  });
+  try{ var saved=localStorage.getItem('pt-theme'); if(saved) document.documentElement.setAttribute('data-theme',saved); }catch(e){}
+
+  // cascade
+  var casc=document.getElementById('cascade');
+  if(casc){
+    casc.addEventListener('click',function(e){
+      var b=e.target.closest('.step'); if(!b) return;
+      var open=b.getAttribute('aria-expanded')==='true';
+      b.setAttribute('aria-expanded',!open);
+      b.querySelector('.chev').textContent=open?'+':'–';
+      var body=b.nextElementSibling;
+      if(body&&body.classList.contains('body')) body.classList.toggle('open',!open);
+    });
+  }
+
+  // brain map
+  var info={
+    pfc:['Prefrontal cortex','Normally: planning, holding goals, inhibiting impulses, and monitoring how you are coming across. Proposed role: reduced ordinary self-monitoring during deep trance, which would loosen the usual constraints on speech and behaviour.','maybe'],
+    acc:['Anterior cingulate cortex','Normally: detecting conflict, registering effort, and encoding how <em>unpleasant</em> a pain feels as distinct from how intense it is. Hypnotic suggestion has been shown to change pain unpleasantness along with activity here. Also appeared as a stronger hub in the drumming trance study.','ok'],
+    insula:['Insula','Normally: representing the body\u2019s internal state — heartbeat, breath, gut, temperature — and contributing to what feels salient. Proposed role: the source of the strange bodily feelings that get interpreted as arrival. Showed increased hub strength during trance in the drumming study.','maybe'],
+    amyg:['Amygdala','Normally: assigning threat and emotional weight to events. Proposed role: high arousal without a threat interpretation — the blows are framed as devotion, not danger, which matters because fear amplifies pain.','maybe'],
+    hipp:['Hippocampus','Normally: binding an experience into a retrievable memory. Proposed role: relevant to the patchy memory reported after episodes. Reduced hippocampal activity was among the findings in the SPECT study of mediums during trance writing.','maybe'],
+    tpj:['Temporoparietal junction','Normally: integrating body signals to maintain ownership of the body and the location of your viewpoint; also involved in distinguishing self from other. Disrupting it experimentally produces out-of-body and altered-ownership experiences. The most anatomically plausible candidate for “this body is not mine”.','maybe'],
+    pcc:['Posterior cingulate cortex','Normally: a hub of the default mode network, active in inward-directed thought and self-referential narrative. In the drumming fMRI study it became a stronger hub during trance and coupled unusually with control-network regions.','ok'],
+    stem:['Brainstem and autonomic system','Normally: arousal level, heart rate, breathing — and the descending pathways that can turn pain signals down before they reach awareness. The best-measured part of ritual states, because heart rate can be recorded in the field.','ok']
+  };
+  var tags={ok:'<span class="tag t-ok"><span class="dot"></span>Supported</span>',maybe:'<span class="tag t-maybe"><span class="dot"></span>Proposed</span>'};
+  var readout=document.getElementById('readout');
+  function pick(key){
+    var d=info[key]; if(!d) return;
+    readout.innerHTML='<h4>'+d[0]+'</h4><p>'+d[1]+'</p><p>'+tags[d[2]]+'</p>';
+    [].forEach.call(document.querySelectorAll('.region'),function(r){ r.classList.toggle('on', r.dataset.r===key); });
+    [].forEach.call(document.querySelectorAll('.rbtn'),function(r){ r.classList.toggle('on', r.dataset.r===key); });
+  }
+  [].forEach.call(document.querySelectorAll('.region,.rbtn'),function(el){
+    el.addEventListener('click',function(){ pick(el.dataset.r); });
+  });
+})();
+</script>
+</body>
+</html>
